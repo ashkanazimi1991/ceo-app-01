@@ -1,0 +1,114 @@
+.main {
+  height: 60px;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  z-index:10;
+  background: #000000;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 30px 90px;
+  
+}
+.main .container_logo{
+  margin: auto;
+  cursor: pointer;
+  display:flex;
+  color: white;
+  flex-direction: row;
+  
+}
+#logo_img {
+   flex-direction: column;
+   padding: 4px;
+   height: 60px;
+   width: 60px;
+}
+#logo_title{
+  margin-top: 15px;
+  font-size: 30px;
+  background: #ffffff;
+background: -webkit-linear-gradient(to top right, #0ca5c0 23%, #f1f1f1 100%);
+background: -moz-linear-gradient(to top right, #ffffff 23%, #ffffff 100%);
+background: linear-gradient(to top right, #1384b1 23%, #d3cece 100%);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+}
+@media screen and (max-width: 480px) {
+  #logo_title {
+    display:none;
+  }
+  
+}
+/* ###############search icon box################### */
+.center {
+  top: 5px;
+  position: relative;
+  flex-direction: column;
+  width: 50%;
+  margin-right: 50px;
+  margin: auto;
+}
+/* #########Search############### */
+.form {
+  align-items: center;
+  position: relative;
+  display: flex;
+  transition: all 1s;
+  width: 100%;
+  background: #cccbca;
+  border-radius: 15px;
+}
+
+#input {
+  color: rgb(0, 0, 0);
+  position: relative;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  width: 100%;
+  height: 42.5px;
+  outline: 0;
+  border: 0;
+  display: block;
+  font-size: 18px;
+  font-weight:700;
+  border-radius: 0px;
+  padding: 0 20px;
+  background: transparent;
+}
+
+#icon {
+  box-sizing: border-box;
+  padding: 5px;
+  width: 42.5px;
+  height: 42.5px;
+  position: relative;
+  top: 2px;
+  right: 5px;
+  border-radius: 50%;
+  color: #b30000;
+  text-align: center;
+  font-size: 1.2em;
+  transition: all 0.1s;
+}
+
+
+
+
+
+/* ##############Cart############# */
+.cart{
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+}
+#cart{
+    position: relative;
+    color: #555555;
+    font-size: 20px;    
+}
+#product_number{
+    
+    color: aliceblue;
+    font-size: 14px;
+    
+}

@@ -1,0 +1,98 @@
+
+{
+
+  "short_name": "CEO",
+
+  "name": "ONLINE CEO",
+
+  "description": "Web Services - iot - Artificial Intelligence - Robotic Automation",
+
+  "icons": [
+
+    {
+
+      "src": "/icons/android/icon-512-512.png",
+
+      "type": "image/png",
+
+      "sizes": "512-512"
+
+    },
+
+    {
+
+        "src": "/icons/android/icon-192-192.png",
+  
+        "type": "image/png",
+  
+        "sizes": "192-192"
+  
+      },
+
+      {
+
+        "src": "/icons/android/icon-144-144.png",
+  
+        "type": "image/png",
+  
+        "sizes": "144-144"
+  
+      },
+
+      {
+
+        "src": "/icons/android/icon-96-96.png",
+  
+        "type": "image/png",
+  
+        "sizes": "96-96"
+  
+      },
+      {
+
+        "src": "/icons/android/icon-72-72.png",
+  
+        "type": "image/png",
+  
+        "sizes": "72-72"
+  
+      },
+      
+      {
+
+        "src": "/icons/android/icon-48-48.png",
+  
+        "type": "image/png",
+  
+        "sizes": "48-48"
+  
+      },
+      {
+
+        "src": "/icons/android/maskable.png",
+  
+        "type": "image/png",
+  
+        "sizes": "192-192",
+        
+        "purpose": "maskable"
+  
+      }
+
+
+  ],
+
+  "shortcuts": [],
+
+  "start_url": "/icons/android/",
+
+  "background_color": "#FFFFFF",
+
+  "display": "standalone",
+
+  "scope": "/",
+
+  "theme_color": "#000000",
+
+}
+
