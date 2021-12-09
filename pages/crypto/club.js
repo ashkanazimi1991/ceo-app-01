@@ -18,14 +18,14 @@ const club = () => (
       </div>
     </div>
     {/* ############################################################################# Section One */}
-    <div className={styles.section} style={{ background: "#fff" }}>
+    <div className={styles.section} style={{ background: "#1E263F" }}>
       <div className={styles.leftSide}>
-       <img src="/images/crypto2004.gif" alt="online ceo Company" />
+       <img src="/images/startcrypto1.gif" alt="online ceo Company" />
         {/* <video src="/videos/fashinm.mp4" autoPlay muted loop /> */}
       </div>
       <div className={styles.rightSide}>
-        <h1> آموزش صفر تا صد کریپتو</h1>
-        <h2 id={styles.titleh2}> 
+        <h1  style={{ color: "#ff0000" }} > آموزش صفر تا صد کریپتو</h1>
+        <h2  style={{ color: "#fff" }}id={styles.titleh2}> 
           آموزش کامل و جامع کریپتو در سطح های مختلف توسط معامله گر های با تجربه و برنامه نویسان بلاک چین , در مجموعه مدیریت آنلاین انجام می شود. اگر می خواهید در دنیای کریپتو موضوع مجهولی باقی نگذاریم , به ما بپیوندید   
         </h2>
         <button>اطلاعات بیشتر</button>
@@ -37,8 +37,8 @@ const club = () => (
       style={{ direction: "rtl", background: "#000" }}
     >
       <div className={styles.leftSide}>
-        <video src="/videos/team.mp4" autoPlay muted loop />
-        {/* <img src="/images/club200.webp " alt="onlineceo Company" /> */}
+        {/* <video src="/videos/team.mp4" autoPlay muted loop /> */}
+        <img src="/images/teanclub.gif " alt="onlineceo Company" />
       </div>
       <div className={styles.rightSide}>
         <h1 style={{ color: "#ff0000" }}>معامله گری تیمی در بازارهای کریپتو </h1>
@@ -54,7 +54,7 @@ const club = () => (
       style={{ direction: "ltr", background: "#fff" }}
     >
       <div className={styles.leftSide}>
-        <img src="/images/crypto120.gif" alt="مدیریت آنلاین " />
+        <img src="/images/cryptopay.gif" alt="مدیریت آنلاین " />
         {/* <video src="/videos/club01.mp4" autoPlay muted loop /> */}
       </div>
       <div className={styles.rightSide} style={{ backgroundColor: "#fff" }}>
@@ -70,16 +70,16 @@ const club = () => (
     {/* ############################################################################# Section Four */}
     <div
       className={styles.section}
-      style={{ direction: "rtl", background: "#010106" }}
+      style={{ direction: "rtl", background: "#130F1A" }}
     >
       <div className={styles.leftSide}>
-        {/* <img src="/images/crypto650.gif" alt="online ceo Company" /> */}
-        <video src="/videos/club01.mp4" autoPlay muted loop />
+        <img src="/images/cryptonft.gif" alt="online ceo Company" />
+        {/* <video src="/videos/club01.mp4" autoPlay muted loop /> */}
       </div>
-      <div className={styles.rightSide} style={{ backgroundColor: "#010106" }}>
+      <div className={styles.rightSide} style={{ backgroundColor: "#130F1A" }}>
         <h1 style={{ color: "#b30000" }}>Build , Sell , Buy , NFT  </h1>
         <h2 style={{ color: "#fff" }}>
-              ان اف تی ها قطعه های مدیا هستند که به الگو های بلاک چینی وصل شده اند , و مالک اثر با ارز دیجیتال اثر خود را قیمت گذاری کرده است , شما هم می توانید به راحتی و رایگان هنر های خود را به بلاک چین متصل کنید و بفروش برسانید , در واقع ان اف تی ها کار یک واحد مالی را انجام می دهند.   
+              ان اف تی ها  مدیاهای هستند که  وقتی به الگو های بلاک چینی وصل می شوند , می توانند به عنوان واحد های مالی رمز ارزی در آیند , در ابتدا مالک اثر با ارز دیجیتال اثر خود را به بلاک چین متصل می کند سپس آن اثر در فروشگاه های ان اف تی بفروش می رسد ,شما هم می توانید به راحتی و رایگان هنر های خود را به بلاک چین متصل کنید و بفروش برسانید    
         </h2>
         <button>اطلاعات بیشتر</button>
       </div>

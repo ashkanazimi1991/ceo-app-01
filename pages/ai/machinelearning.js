@@ -8,13 +8,13 @@ const machinelearning = () => (
     {/* ######################################################Video Section */}
     <div className={styles.videoPlace}>
       <div className={styles.video}>
-        <Own img1="/images/arm502.jpg" objectFit1="cover" img2="/images/iot800.jpg" objectFit2="cover" img3="/images/robotic1010.gif" objectFit3="cover" img4="/images/robotic1011.jpg" objectFit4="cover" img5="/images/robotic05.gif" objectFit5="cover" img6="/images/office03.jpg" objectFit6="cover" bgColor="#000" bg1Color="#fff" bg2Color="#231A2B" bg3Color="" bg4Color="#fff" bg5Color="#000" bg6Color="#fff"/>
+        <Own img1="/images/robomap.gif" objectFit1="cover" img2="/images/iot800.jpg" objectFit2="cover" img3="/images/robotic1010.gif" objectFit3="cover" img4="/images/robotic1011.jpg" objectFit4="cover" img5="/images/robotic05.gif" objectFit5="cover" img6="/images/office03.jpg" objectFit6="cover" bgColor="#000" bg1Color="#fff" bg2Color="#231A2B" bg3Color="" bg4Color="#fff" bg5Color="#000" bg6Color="#fff"/>
         {/* <AdvisorPic/> */}
         {/* <img src="/images/advisorPic/automation.svg" alt="" /> */}
         {/* <Pic className={styles.automation}/> */}
       </div>
       <div className={styles.video_title}>
-        <h1>Robotic Platforms </h1>
+        <h1>Machine Learning </h1>
       </div>
     </div>
     {/* ############################################################################# Section One */}
@@ -24,9 +24,9 @@ const machinelearning = () => (
         {/* <video src="/videos/fashinm.mp4" autoPlay muted loop /> */}
       </div>
       <div className={styles.rightSide}>
-        <h1> پلتفرم های رباتیک</h1>
+        <h1>درباره یادگیری ماشین</h1>
         <h2 id={styles.titleh2}> 
-              پلتفرم های رباتیک شامل نرم افزار های  تحت وبی است که برپایه یادگیری ماشین و هوش مصنوعی برنامه نویسی می شود که برنامه دهی ربات ها و ماشین ها را امکانپذیر می کند, مانند برنامه دهی و کنترل بازوهای رباتیک (تکی و تیمی) یا کنترل ماشین آلات حمل و انتقال یا ربات های خدماتی و ..      
+            اگر ماشینی داده های را که از ورودی های خود بدست می آورد , بطور درست در دیتابیس خود ذخیره کند , با ایجاد یک موتور جستجوگر در داخل پلتفرم ماشین , ماشین قادر می شود از داده های قبلی خود , برای بهتر کردن فرآیند استفاده کند. این فرآیند تعریفی از یک ماشین هوشمند است. ولی این پروسه فقط برای ماشین ها نیست بلکه می توان از یادگیری ماشین در مقیاس مختلف در تمام پلتفرم ها استفاده کرد.      
         </h2>
         <button>اطلاعات بیشتر</button>
       </div>
@@ -38,12 +38,12 @@ const machinelearning = () => (
     >
       <div className={styles.leftSide}>
         {/* <video src="/videos/ceo.mp4" autoPlay muted loop /> */}
-        <img src="/images/robotic6655.gif " alt="onlineceo Company" />
+        <img src="/images/aieyes.gif " alt="onlineceo Company" />
       </div>
       <div className={styles.rightSide}>
-        <h1 style={{ color: "#ff0000" }}>پلتفرم های رباتیک در صنعت</h1>
+        <h1 style={{ color: "#ff0000" }}>آنالیز تصاویر</h1>
         <h2 style={{ color: "#fff" }}>
-           پلتفرم رباتیک یک کسب و کار صنعتی شامل کنترل و مدیریت آنلاین تمام ربات ها و ماشین ها است , که در یک بستر یکپارچه , بصورت اختصاصی کدنویسی می شود تا مدیران از سراسر جهان  بتوانند تمام اتوماسیون خود را کنترل کنند و یا متغییرهای کسب و کار خود را تغییر دهند.
+           آنالیز تصاویر در ماشین ها کمک میکند ماشین های هوشمند درک درستی از اطراف خود داشته باشند. این ویژگی امکان استفاده از ربات را در بسیاری از امور تکراری فراهم میکند.مانند تشیخص گوجه فرنگی ها رسیده.برای این مثال بازه رنگی قرمز هدف ماشین است و فقط آنهای را میچیند که در بازه رنگی تعیین شده باشد
         </h2>
         <button>اطلاعات بیشتر</button>
       </div>
@@ -54,15 +54,15 @@ const machinelearning = () => (
       style={{ direction: "ltr", background: "#fff" }}
     >
       <div className={styles.leftSide}>
-        {/* <img src="/images/robotic432.jpg" alt="مدیریت آنلاین " /> */}
-        <video src="/videos/scan010.mp4" autoPlay muted loop />
+        <img src="/images/robomap.gif" alt="مدیریت آنلاین " />
+        {/* <video src="/videos/scan010.mp4" autoPlay muted loop /> */}
       </div>
       <div className={styles.rightSide} style={{ backgroundColor: "#fff" }}>
         <h1 style={{ color: "#b30000" }}>
-        پلتفرم های رباتیک در کشاورزی
+        نقشه برداری از محیط
         </h1>
         <h2 style={{ color: "#000" }}>
-        برنامه نویسی پلتفرم ربات های گلخانه و مزارع بصورت اختصاصی , برای انجام امور روتین کاشت , داشت و برداشت توسط ربات , همچنین طراحی و اجرا ربات های اختصاصی مجهز به هوش مصنوعی و یادگیری ماشین برای مزارع توسط مجموعه مدیریت آنلاین انجام می شود.
+        برای اینکه ماشین های هوشمند بدانند که در کجا باید کار کنند باید درک و نقشه دقیقی از محیط را داشته باشند. برای اینکار بطور معمول از سنسورهای آلتراسنونیگ و در مقیاس های بزرگتر از جی پی اس استفاده می کنند و زمانی که این ماشینها با سنسور های امنیتی هم مجهز می شوند نتیجه کار می شود حرکت خودکار ماشین ها در منطقه تعریف شده بدون تصادف با موانع در مسیر.
         </h2>
         <button> اطلاعات بیشتر</button>
       </div>
@@ -77,9 +77,9 @@ const machinelearning = () => (
         {/* <video src="/videos/club01.mp4" autoPlay muted loop /> */}
       </div>
       <div className={styles.rightSide} style={{ backgroundColor: "#010106" }}>
-        <h1 style={{ color: "#b30000" }}>پلتفرم های رباتیک در پزشکی</h1>
+        <h1 style={{ color: "#b30000" }}> ربات های هوشمند در پزشکی</h1>
         <h2 style={{ color: "#fff" }}>
-              یکی از دلایل استفاده از ربات ها دقت بسیار بالای آنهاست که در بازوهای جراحی حتی به دقت های میکرومتری می رسد , به همین دلیل در کشور های پیشرفته , برای انجام جراحی های دقیق از ربات ها استفاده می کنند , از این رو مجموعه برنامه نویسی مدیر آنلاین شروع به برنامه نویسی ربات های جراح کرده که در سال 1402 وارد بازار ایران و سایر کشورها می شود..    
+              زمانی که در ربات ها دقت های میکرومتری هست , سپردن جراحی به دستانی که هم دقت کمتری دارند هم دچار خطاهای انسانی میشوند کاری بسیار اشتباه است.جراح میتواند جراحی ها خود را تا صدها بار دقیق تر کند.دسترسی به این دقت فرآیند زمان بر و هزینه بری است     
         </h2>
         <button>اطلاعات بیشتر</button>
       </div>

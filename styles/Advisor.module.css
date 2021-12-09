@@ -96,7 +96,7 @@
   pointer-events: none;
 }
 .leftSide > img:hover {
-  filter: drop-shadow(7px 7px 7px #0000007c);
+  /* filter: drop-shadow(7px 7px 7px #0000007c); */
   transform: scale(1.1);
 }
 .rightSide {
