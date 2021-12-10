@@ -8,7 +8,7 @@ const machinelearning = () => (
     {/* ######################################################Video Section */}
     <div className={styles.videoPlace}>
       <div className={styles.video}>
-        <Own img1="/images/robomap.gif" objectFit1="cover" img2="/images/iot800.jpg" objectFit2="cover" img3="/images/robotic1010.gif" objectFit3="cover" img4="/images/robotic1011.jpg" objectFit4="cover" img5="/images/robotic05.gif" objectFit5="cover" img6="/images/office03.jpg" objectFit6="cover" bgColor="#000" bg1Color="#fff" bg2Color="#231A2B" bg3Color="" bg4Color="#fff" bg5Color="#000" bg6Color="#fff"/>
+        <Own img1="/images/ai05.gif" objectFit1="cover" img2="/images/iot800.jpg" objectFit2="cover" img3="/images/robotic1010.gif" objectFit3="cover" img4="/images/sergery090.jpg" objectFit4="cover" img5="/images/update01.gif" objectFit5="cover" img6="/images/office03.jpg" objectFit6="cover" bgColor="#000" bg1Color="#fff" bg2Color="#231A2B" bg3Color="" bg4Color="#fff" bg5Color="#000" bg6Color="#fff"/>
         {/* <AdvisorPic/> */}
         {/* <img src="/images/advisorPic/automation.svg" alt="" /> */}
         {/* <Pic className={styles.automation}/> */}
@@ -79,7 +79,7 @@ const machinelearning = () => (
       <div className={styles.rightSide} style={{ backgroundColor: "#010106" }}>
         <h1 style={{ color: "#b30000" }}> ربات های هوشمند در پزشکی</h1>
         <h2 style={{ color: "#fff" }}>
-              زمانی که در ربات ها دقت های میکرومتری هست , سپردن جراحی به دستانی که هم دقت کمتری دارند هم دچار خطاهای انسانی میشوند کاری بسیار اشتباه است.جراح میتواند جراحی ها خود را تا صدها بار دقیق تر کند.دسترسی به این دقت فرآیند زمان بر و هزینه بری است     
+              زمانی که در ربات ها دقت های میکرومتری هست , سپردن جراحی به دستانی که هم دقت کمتری دارند هم دچار خطاهای انسانی میشوند کاری بسیار اشتباه است.جراح میتواند جراحی ها خود را تا صدها بار دقیق تر کند.دسترسی به این دقت فرآیند زمان بر و هزینه بری است ولی مجموعه آنلاین در تلاش است  این تکنولوژی را بصورت اقتصادی تر و قابل اجرایی تر وارد بازار کند.     
         </h2>
         <button>اطلاعات بیشتر</button>
       </div>
