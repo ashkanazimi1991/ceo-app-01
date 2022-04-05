@@ -19,7 +19,7 @@ export const menuItems = [
     subMenus: [
       { name: "پلتفرم های مدیریت تحت وب ", to: "/iot/iotplatform" },
       { name: "هوشمندسازی کسب و کار", to: "/iot/iotsetup" },
-      { name: " فروشگاه اینترنت اشیا", to: "/iot/iotstore" },
+      // { name: " فروشگاه اینترنت اشیا", to: "/iot/iotstore" },
     ],
   },
   {
@@ -27,20 +27,20 @@ export const menuItems = [
     to: "/",
     subMenus: [
       { name: " پلتفرم های رباتیک", to: "/robotic/roboticplatform" },
-      { name: "فروشگاه رباتیک", to: "/robotic/robotichardware" },
+      // { name: "فروشگاه رباتیک", to: "/robotic/robotichardware" },
       { name: "راهکارهای رباتیک", to: "/robotic/roboticslotion" },
       
     ],
   },
-  {
-    name: "Artificial Intelligence",
-    to: "/",
-    subMenus: [
-      { name: "یادگیری ماشین", to: "/ai/machinelearning" },
-      { name: "آنالیز و مدیریت", to: "/ai/aianlayse" },
-      { name: "راهکارهای هوش مصنوعی", to: "/ai/aislotion" },
-    ],
-  },
+  // {
+  //   name: "Artificial Intelligence",
+  //   to: "/",
+  //   subMenus: [
+  //     { name: "یادگیری ماشین", to: "/ai/machinelearning" },
+  //     { name: "آنالیز و مدیریت", to: "/ai/aianlayse" },
+  //     { name: "راهکارهای هوش مصنوعی", to: "/ai/aislotion" },
+  //   ],
+  // },
   {
     name: "Crypto Currency",
     to: "/",

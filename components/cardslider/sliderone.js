@@ -45,32 +45,32 @@ export default class SliderOne extends Component {
       ],
     };
     return (
-      <div style={ {background: "#fff"}}>
+      <div style={ {background: ""}}>
         <Slider {...settings}>
           <div>
             <div className={styles.card}>
-              <img src={this.props.img1} alt="سنسور" />
+              <img src={this.props.img1} alt=" مدیریت آنلاین" />
             </div>
             <h1 id={styles.title} >{this.props.title1} </h1>
           </div>
          
           <div>
             <div className={styles.card}>
-              <img src={this.props.img2} alt="پردازنده" />
+              <img src={this.props.img2} alt="رباتیک" />
             </div>
               <h1 id={styles.title} >{this.props.title2}</h1>
           </div>
 
           <div>
             <div className={styles.card}>
-              <img src={this.props.img3} alt="بردهای کنترلی" />
+              <img src={this.props.img3} alt="اینترنت اشیا" />
             </div>
               <h1 id={styles.title} > {this.props.title3}</h1>
           </div>
 
           <div>
             <div className={styles.card}>
-              <img src={this.props.img4} alt="نمایشگر" />
+              <img src={this.props.img4} alt="شرکت برنامه نویسی" />
             </div>
               <h1 id={styles.title} >{this.props.title4}</h1>
           </div>
@@ -78,7 +78,7 @@ export default class SliderOne extends Component {
           
           <div>
             <div className={styles.card}>
-              <img src={this.props.img5} alt="لوازم جانبی" />
+              <img src={this.props.img5} alt="برنامه نویسی" />
             </div>
               <h1 id={styles.title} >{this.props.title5}</h1>
           </div>
@@ -86,7 +86,7 @@ export default class SliderOne extends Component {
          
           <div>
             <div className={styles.card}>
-              <img src={this.props.img6} alt="آموزشی" />
+              <img src={this.props.img6} alt="online ceo" />
             </div>
               <h1 id={styles.title} >{this.props.title6}</h1>
           </div>

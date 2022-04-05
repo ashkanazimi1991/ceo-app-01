@@ -41,7 +41,8 @@ const InfoSection = ({lightBg, id, topLine, headLine, description, img,display3D
                                 <Resp/>
                             </div>
                                 <Img src={img} alt={alt} style={{display:imgDisplay}} />
-                                <video  id='video' src={video} style={{display:videoDisplay}} autoPlay loop muted  type="video/mp4"/>
+                                <video  id='video' src={video} style={{display:videoDisplay}} 
+                                autoPlay loop muted  type="video/mp4"/>
                                 <div style={{width:'100%', height:'100%',display:`${display3D}`,cursor:'default'}}>
                                 <React360Viewer
                                     amount={36}

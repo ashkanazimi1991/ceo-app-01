@@ -16,9 +16,9 @@ export const InfoWrapper = styled.div`
     display: flex;
     align-items: center;
     z-index: 1;
-    height: 800px;
+    height: 100vh;
     width: 100%;
-    max-width: 100%;
+    // max-width: 100%;
     justify-content: center;
 
     @media screen and (max-width: 1048px) {
@@ -141,7 +141,7 @@ export const BtnWrap = styled.div`
 
 export const ImgWrap = styled.div`  
     max-width: 94%;
-    height: 100%;
+    height: 95%;
     width: 100%;
     @media screen and (max-width: 768px) {
         margin-right: 0px;

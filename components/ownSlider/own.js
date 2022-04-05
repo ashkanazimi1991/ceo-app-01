@@ -28,7 +28,7 @@ export default function Own({img1,img2,img3,img4,img5,img6,bgColor,bg1Color,bg2C
             <h1 style={{ marginLeft: "5px", textAlign: "center" }}>   
             </h1>
             <h1 style={{ marginLeft: "5px" }}></h1>
-            <h1 style={{ marginLeft: "5px", textAlign: "center" }}>
+            <h1 style={{ marginLeft: "5px", textAlign: "left" }}>
                
             </h1>
           </div>
