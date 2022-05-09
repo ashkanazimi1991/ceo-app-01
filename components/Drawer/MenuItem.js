@@ -3,7 +3,7 @@ import React, { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 
 const MenuItem = (props) => {
-  const { name, subMenus, to } = props;
+  const { name, subMenus, to , number } = props;
   const [expand, setExpand] = useState(false);
   let menuRef = useRef();
   useEffect(() => {
@@ -25,6 +25,8 @@ const MenuItem = (props) => {
           <div className="sidebar-logo">
             {(() => {
               switch (name) {
+                case "اخبار":
+                  return <BiPlanet id="drawer-icon"/>;
                 case "WEB Service":
                   return <BiPlanet id="drawer-icon"/>;
                 case "I O T" :
@@ -49,15 +51,24 @@ const MenuItem = (props) => {
       </div>
       {subMenus  ? (
         <ul className={`sub-menu ${expand ? "active" : ""}`}>
-          <h1 href={to} className="link-name">
-            {name}
-          </h1>
+          {number === 1 ? 
+            <Link href={`/${to}`}>
+              {<h1  className="link-name"> {name}</h1>}
+            </Link> :
+             <Link href={`/products/?slug=${to}`}>
+             {<h1  className="link-name"> {name}</h1>}
+           </Link>
+            }
           {subMenus.map((menu, index) => (
             <li key={index}>
-              <Link  href={menu.to}>
-                {/* <h1>({menu.to}</h1> */}
+              {menu.number ? 
+              <Link  href={`/${menu.slug}`}>
                 {menu.name}
-              </Link>
+              </Link> : 
+              <Link  href={`/products/?slug=${menu.slug}`}>
+              {menu.name}
+            </Link>
+            }
             </li>
           ))}
         </ul>

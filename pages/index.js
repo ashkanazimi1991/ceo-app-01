@@ -10,9 +10,11 @@ import SliderOne from "../components/cardslider/sliderone";
 import World from '../components/worldMap/world';
 import Own from '../components/ownSlider/own'
 import Head from 'next/head'
+import News from '../components/news/News';
+import axios from 'axios';
+import { MainLink } from '../components/BaseUrl/BaseUrl';
 
-
-export default function Home() {
+export default function Home({news}) {
   const [isOpen, setIsOpen] = useState(false);
 
     const toggle = () => {
@@ -58,8 +60,21 @@ export default function Home() {
       <InfoSection {...homeObjectFour} />
       <InfoSection {...homeObjectsix} />
       <World/>
+      <News news={news} />
       <Footer/>
       
     </div>
   )
+}
+
+//get data from database
+export async function getServerSideProps(context){
+  const news = await axios.get(`${MainLink}/last_news/`);
+
+
+    const Newsresponse = news.data
+
+    return{
+      props:{news: Newsresponse}
+    }
 }

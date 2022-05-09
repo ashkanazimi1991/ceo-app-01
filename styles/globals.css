@@ -31,3 +31,32 @@ a {
 * {
   box-sizing: border-box;
 }
+
+.ant-list-item p{
+  margin: 0;
+}
+
+.ant-skeleton-element{
+  width: 100%!important;
+}
+.ant-list-bordered.ant-list-sm .ant-list-item{
+  padding: 14px 16px!important;
+}
+.productsImage{
+  width: 250px!important;
+  height: 250px!important;
+}
+.diatilsImageDiv{
+  height: 380px!important;
+}
+.cartContainer{
+  width: 100%;
+}
+.cartContainer .ant-card-body{
+  width: 100%;
+}
+@media only screen and (max-width: 576px) {
+  .ant-card-body{
+      padding: 24px 0px!important;
+  }
+}

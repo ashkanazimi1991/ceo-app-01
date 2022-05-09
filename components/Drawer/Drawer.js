@@ -1,34 +1,48 @@
 import { BiLogOutCircle, BiBody } from "react-icons/bi";
-import { useEffect, useRef, useState } from "react";
+import React,{ useEffect, useRef, useState } from "react";
 import MenuItem from "./MenuItem";
+import { MainLink } from "../BaseUrl/BaseUrl";
+import axios from "axios";
+
 
 export const menuItems = [
   {
+    name: "اخبار",
+    to: "/news/",
+    number: 1,
+    subMenus: [
+      { name: "اخبار", to: "/news/",  number: 1 },
+    ],
+  },
+  {
     name: "WEB Service",
     to: "/webservice/index",
+    number: 1,
     subMenus: [
-      { name: "وب اپلیکیشن و وب سایت", to: "/webservice/website" },
-      { name: "پلتفرم و نرم افزار", to: "/webservice/software" },
-      { name: " امنیت و پشتیبانی", to: "/webservice/security" },
-      { name: "خدمات بهینه سازی و سئو", to: "/webservice/seo" },
+      { name: "وب اپلیکیشن و وب سایت", to: "/webservice/website",  number: 1 },
+      { name: "پلتفرم و نرم افزار", to: "/webservice/software" ,  number: 1},
+      { name: " امنیت و پشتیبانی", to: "/webservice/security",  number: 1 },
+      { name: "خدمات بهینه سازی و سئو", to: "/webservice/seo" ,  number: 1},
     ],
   },
   {
     name: "I O T",
     to: "/",
+    number: 1,
     subMenus: [
-      { name: "پلتفرم های مدیریت تحت وب ", to: "/iot/iotplatform" },
-      { name: "هوشمندسازی کسب و کار", to: "/iot/iotsetup" },
+      { name: "پلتفرم های مدیریت تحت وب ", to: "/iot/iotplatform" ,  number: 1 },
+      { name: "هوشمندسازی کسب و کار", to: "/iot/iotsetup" ,  number: 1 },
       // { name: " فروشگاه اینترنت اشیا", to: "/iot/iotstore" },
     ],
   },
   {
     name: "Robotic Automaiton",
     to: "/",
+    number: 1,
     subMenus: [
-      { name: " پلتفرم های رباتیک", to: "/robotic/roboticplatform" },
+      { name: " پلتفرم های رباتیک", to: "/robotic/roboticplatform" ,  number: 1 },
       // { name: "فروشگاه رباتیک", to: "/robotic/robotichardware" },
-      { name: "راهکارهای رباتیک", to: "/robotic/roboticslotion" },
+      { name: "راهکارهای رباتیک", to: "/robotic/roboticslotion" ,  number: 1 },
       
     ],
   },
@@ -44,19 +58,22 @@ export const menuItems = [
   {
     name: "Crypto Currency",
     to: "/",
+    number: 1,
     subMenus: [
-      { name: "صرافی ارز دیجیتال", to: "/crypto/exchange" },
-      { name: "خدمات بلاک چینی", to: "/crypto/blockchain" },
-      { name: "کلوب های آموزشی", to: "/crypto/club" },
+      { name: "صرافی ارز دیجیتال", to: "/crypto/exchange",   number: 1  },
+      { name: "خدمات بلاک چینی", to: "/crypto/blockchain" ,   number: 1 },
+      { name: "کلوب های آموزشی", to: "/crypto/club" ,   number: 1 },
     ],
   },
 ];
 
 function Drawer() {
+  const [data , setData] = useState([])
   const [close, setClose] = useState(true);
   const [open, setOpen] = useState(false);
   let menRef = useRef();
   useEffect(() => {
+    axios.get(`${MainLink}/categories-m1/`).then(response => setData(response.data))
     document.addEventListener("mousedown", (event) => {
       if(menRef.current){
         if (!menRef.current.contains(event.target)) {
@@ -67,7 +84,8 @@ function Drawer() {
       
    
     });
-  });
+  },[]);
+  
   let profileRef = useRef();
   useEffect(() => {
     document.addEventListener("mousedown", (event) => {
@@ -90,6 +108,14 @@ function Drawer() {
           </div>
         </div>
         <ul className="nav-links">
+        {data.map((menuItem, index) => (
+            <MenuItem
+              key={index}
+              name={menuItem.name}
+              to={menuItem.slug}
+              subMenus={menuItem.parent || []}
+            />
+          ))}
           {menuItems.map((menuItem, index) => (
             <MenuItem
               key={index}
