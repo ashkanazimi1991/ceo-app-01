@@ -14,57 +14,7 @@ export const menuItems = [
       { name: "اخبار", to: "/news/",  number: 1 },
     ],
   },
-  {
-    name: "WEB Service",
-    to: "/webservice/index",
-    number: 1,
-    subMenus: [
-      { name: "وب اپلیکیشن و وب سایت", to: "/webservice/website",  number: 1 },
-      { name: "پلتفرم و نرم افزار", to: "/webservice/software" ,  number: 1},
-      { name: " امنیت و پشتیبانی", to: "/webservice/security",  number: 1 },
-      { name: "خدمات بهینه سازی و سئو", to: "/webservice/seo" ,  number: 1},
-    ],
-  },
-  {
-    name: "I O T",
-    to: "/",
-    number: 1,
-    subMenus: [
-      { name: "پلتفرم های مدیریت تحت وب ", to: "/iot/iotplatform" ,  number: 1 },
-      { name: "هوشمندسازی کسب و کار", to: "/iot/iotsetup" ,  number: 1 },
-      // { name: " فروشگاه اینترنت اشیا", to: "/iot/iotstore" },
-    ],
-  },
-  {
-    name: "Robotic Automaiton",
-    to: "/",
-    number: 1,
-    subMenus: [
-      { name: " پلتفرم های رباتیک", to: "/robotic/roboticplatform" ,  number: 1 },
-      // { name: "فروشگاه رباتیک", to: "/robotic/robotichardware" },
-      { name: "راهکارهای رباتیک", to: "/robotic/roboticslotion" ,  number: 1 },
-      
-    ],
-  },
-  // {
-  //   name: "Artificial Intelligence",
-  //   to: "/",
-  //   subMenus: [
-  //     { name: "یادگیری ماشین", to: "/ai/machinelearning" },
-  //     { name: "آنالیز و مدیریت", to: "/ai/aianlayse" },
-  //     { name: "راهکارهای هوش مصنوعی", to: "/ai/aislotion" },
-  //   ],
-  // },
-  {
-    name: "Crypto Currency",
-    to: "/",
-    number: 1,
-    subMenus: [
-      { name: "صرافی ارز دیجیتال", to: "/crypto/exchange",   number: 1  },
-      { name: "خدمات بلاک چینی", to: "/crypto/blockchain" ,   number: 1 },
-      { name: "کلوب های آموزشی", to: "/crypto/club" ,   number: 1 },
-    ],
-  },
+
 ];
 
 function Drawer() {
@@ -135,8 +85,8 @@ function Drawer() {
               </div>
 
               <div className="name-job">
-                <div className="profile-name"> User Account </div>
-                <div className="job">Custome words</div>
+                <div className="profile-name"> حساب کاربری </div>
+                <div className="job">تنظیمات داشبورد</div>
               </div>
               <div className="profile-logo">
                 <BiLogOutCircle />

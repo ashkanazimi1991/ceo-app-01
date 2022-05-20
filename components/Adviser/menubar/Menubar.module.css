@@ -1,11 +1,11 @@
 .main {
-  height: 60px;
+  height: 80px;
   width: 100%;
   display: flex;
   justify-content: space-around;
   z-index:10;
-  background: #000000;
-  box-shadow: rgba(0, 0, 0, 0.4) 0px 30px 90px;
+  background: linear-gradient(450deg, #045256, #142028);
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 30px 30px;
   
 }
 .main .container_logo{
@@ -19,18 +19,21 @@
 #logo_img {
    flex-direction: column;
    padding: 4px;
-   height: 60px;
-   width: 60px;
+   height: 65px;
+   width: 65px;
+   filter: drop-shadow(1px 2px 1px #000);
 }
 #logo_title{
   margin-top: 15px;
   font-size: 30px;
-  background: #ffffff;
-background: -webkit-linear-gradient(to top right, #0ca5c0 23%, #f1f1f1 100%);
-background: -moz-linear-gradient(to top right, #ffffff 23%, #ffffff 100%);
-background: linear-gradient(to top right, #1384b1 23%, #d3cece 100%);
--webkit-background-clip: text;
--webkit-text-fill-color: transparent;
+  color: #fff;
+  text-shadow: 2px 2px #000;
+  font-size: 20px;
+    font-weight: bold;
+    position: sticky;
+    padding-top: 10px;
+
+
 }
 @media screen and (max-width: 480px) {
   #logo_title {

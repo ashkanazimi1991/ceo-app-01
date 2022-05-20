@@ -31,12 +31,16 @@ function World() {
           </div>
         </div>
       </div>
-      <h1 id={styles["address"]}>
-         ایران - ارومیه - شیخ تپه-کوی ۹ - مجموعه مدیریت
-        آنلاین
-      </h1>
-      <h1 id={styles["phone"]}>شماره تماس : 4232-3338-044</h1>
+      {/* <div className={styles["text"]}> */}
+        <h1 id={styles["address"]}>
+      Iran - urmia - sheykhtape - N10  
+        </h1>
+
+        <h1 id={styles["phone"]}>Tell :  044-3338-4232</h1>
     </div>
+
+      
+    
   );
 }
 

@@ -7,7 +7,7 @@ export const InfoContainer = styled.div`
     max-width: 100%;
     
     @media screen and (max-width: 768px) {
-        padding:20px;
+        padding:2px;
         
     }
 `;
@@ -17,19 +17,19 @@ export const InfoWrapper = styled.div`
     align-items: center;
     z-index: 1;
     height: 100vh;
-    width: 100%;
+    width: 95%;
     // max-width: 100%;
     justify-content: center;
 
     @media screen and (max-width: 1048px) {
-        height: 600px;
+        height: 100vh;
     }    
     @media screen and (max-width: 768px) {
-        height: 900px;
+        height: 100vh;
         /* padding-top: 20px;    */
     }
     @media screen and (max-width: 480px) {
-        height: 700px;
+        height: 100vh;
     }  
     
 `;
@@ -37,9 +37,9 @@ export const InfoWrapper = styled.div`
 export const InfoRow =styled.div`
     display: grid;
     grid-auto-columns: minmax(auto, 1fr);
-    align-items: center;
+    align-items: right;
     
-    padding: 20px;
+    padding: 10px;
     grid-template-areas: ${({imgStart}) => (imgStart ? `'col2 col1'` : `'col1 col2'`)};
 
     @media screen and (max-width: 780px) {
@@ -73,35 +73,38 @@ export const TextWrapper = styled.div`
 export const TopLine = styled.p`
     color:  #51C4D3 ;
     white-space: nowrap;
-    text-align: center;
-    padding-top: 25px;
+    text-align: Left;
+    padding-top: 0px;
     font-size: 35px;
-    line-height: 70px;
-    /* text-shadow: 1.1px 1px 1px rgba(0, 0, 0, 1); */
+    line-height: 55px;
+    text-shadow: 1.1px 1px 1px rgba(0, 0, 0, 1);
     font-weight: bolder;
-
+    border-bottom-style: solid;
+    border-color: lightblue;
+    
     @media screen and (max-width: 768px) {
-        font-size: 28px;
+        
+        font-size: 30px;
     } 
     @media screen and (max-width: 480px) {
-        font-size: 22px;
+        font-size: 18px;
     }
 `;
 
 export const Heading = styled.h1`
-    padding-top: 15px;
+    padding-top: 1px;
     white-space: normal;
-    font-size: 28px;
-    line-height: 25x;
+    font-size: 20px;
+    line-height: 25px;
     text-shadow: 1.1px 1px 1px rgba(0, 0, 0, 0.5);
     text-align: center;
     font-weight: 700;
-    color: ${({lightText}) => (lightText ? '#000' : '#b30000')};
+    color: ${({lightText}) => (lightText ? '#000' : '#51C4D3')};
 
     @media screen and (max-width: 768px) {
         font-size: 22px;
         text-align: center;
-        line-height: 25px;
+        line-height: 5px;
         
     }
 
@@ -117,8 +120,11 @@ export const Subtitle = styled.p`
     text-align: center;
     margin: 20px;
     white-space: normal;
+    /* text-indent:30%; */
     font-size: 14px;
     font-weight: 500;
+    padding-right: 20px;
+    /* padding-left: 20px; */
     line-height: 40px;
     color: ${({darkText}) => (darkText ? '#000' : '#fff')};
     padding-bottom: 20px;
@@ -153,7 +159,7 @@ export const Img=styled.img`
     width: 98%;
     border-radius: 10px;
     transition: all 0.6s ease-out;
-    /* filter: drop-shadow(00px 10px 20px rgba(0, 0, 0, 0.425)); */
+    filter: drop-shadow(-10px 10px 10px #000);
 
     /* &:hover {
         transform: scale(1.09);

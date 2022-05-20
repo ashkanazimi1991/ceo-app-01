@@ -46,17 +46,17 @@ const Footer = () => {
       </div>
       <div
         style={{
-          fontSize: "8px",
+          fontSize: "12px",
           textAlign: "center",
-          color: "#fff",
+          fontcolor: "#fff",
           padding: "20px",
           backgroundColor:"#131A22",
         }}
       >
-        <h1>
-          ایران- ارومیه - شیخ تپه -  کوی 9  - مجموعه مدیرآنلاین
+        <h1 style={{color:"#7F8487",fontSize:"14px"}}>
+        Iran - urmia - sheykhtape - N10  
         </h1>
-        <h1>شماره تماس : 33384232 -- 044</h1>
+        <h1 style={{color:"#7F8487",fontSize:"14px"}}>Tell : 33384232 -- 044</h1>
       </div>
       <div className={styles.bottomLogo}>
         <Link href="/" passHref>
@@ -80,14 +80,14 @@ const Footer = () => {
           </div>
           <div className={styles.otherlogo}>
             <a
-              href="https:/wa.me/989025907170"
+              href="https:/wa.me/989333936405"
               target="_blank"
               rel="noreferrer"
             >
               <FaWhatsapp id={styles.whatsapp} />
             </a>
           </div>
-          {/* <div className={styles.otherlogo}><FaYoutube id={styles.youtube} /></div> */}
+          <div className={styles.otherlogo}><FaYoutube id={styles.youtube} /></div>
         </div>
       </div>
     </div>

@@ -5,9 +5,11 @@ import Drawer from "../Drawer/Drawer";
 
 const Layout = ({ children }) => (
   <div className="root">
-    <Head>
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossOrigin="anonymous"/>
-    </Head>
+     <Head>
+        <meta name="description" content="نرم افزار" />
+        <link rel="icon" href="/images/1.png" />
+        <link rel='manifest' href='/manifest.json' />
+      </Head>
     <header>
       <Menubar />
     </header>
@@ -30,7 +32,7 @@ const Layout = ({ children }) => (
           justify-content: space-around;
           width: 100%;
           font-size: 10px;
-          background: indigo;
+          
         }
         footer {
           min-width: 320px;

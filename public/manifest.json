@@ -1,8 +1,8 @@
 {
-  "name": "Online CEO",
-  "short_name": "CEO",
+  "name": "مدیریت آنلاین",
+  "short_name": " ONLINE CEO",
   "theme_color": "#fff",
-  "background_color": "#fff",
+  "background_color": "#142028",
   "display": "standalone",
   "scope": "./",
   "start_url": "./",

@@ -38,6 +38,7 @@
     "shamsi-date-converter": "^1.0.5",
     "slick-carousel": "^1.8.1",
     "styled-components": "^5.3.0",
+    "swiper": "^8.1.5",
     "url-loader": "^4.1.1"
   },
   "devDependencies": {

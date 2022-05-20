@@ -17,24 +17,33 @@
   direction: rtl;
   transition: all 0.4s ease-in-out;
   position: fixed;
-  top: 25%;
+  top: 0;
   background-size: cover;
   right: -10px;
-  height: 50%;
-  width: 350px;
-  background: #fff;
+  height: 100vh;
+  width: 100%;
+  /* background: #045256;
+   */
+   background: linear-gradient(5deg, #045256,  #142028);
   border-radius: 10px 0 0 10px;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px,
     rgba(0, 0, 0, 0.22) 0px 10px 10px;
 }
 
+
+
+
+
+
+
+
 .sidebar.close {
-  border-radius: 10px 0 0 10px;
+  border-radius: 10px 0 0 50px;
   width: 70px;
 }
 @media screen and (max-width: 480px) {
   .sidebar {
-    height: 70%;
+    height: 100%;
   }
   .sidebar.close {
     margin-right: -20px;
@@ -73,11 +82,13 @@
 
 .sidebar .logo-details .logo-name {
   color: rgb(50, 214, 255);
+  /* background-color: #b30000; */
   font-size: 14px;
   overflow: hidden;
   cursor: pointer;
   font-weight: 600;
   white-space: nowrap;
+  /* padding-top: 70px; */
 }
 .sidebar .nav-links {
   height: 400px;
@@ -92,6 +103,7 @@
 }
 .sidebar .nav-links li:hover {
   background: #00000069;
+  background-color: #b30000;
   border-radius: 10px;
 }
 .sidebar .nav-links li .icon-link {
@@ -108,8 +120,8 @@
   text-align: left;
   padding-left: 15px;
   line-height: 50px;
-  color: rgb(192, 25, 25);
-  font-size: 20px;
+  color:  rgb(50, 214, 255);
+  font-size: 25px;
 }
 .sidebar .nav-links li:hover .sidebar-logo {
   color: rgb(255, 255, 255);
@@ -123,7 +135,7 @@
 }
 .sidebar .nav-links li a .link-name {
   font-size: 14px;
-  font-weight: 400;
+  /* font-weight: 400; */
   overflow: hidden;
   white-space: nowrap;
   color: rgb(255, 255, 255);
@@ -144,6 +156,7 @@
 }
 
 .sidebar .nav-links li .sub-menu a {
+  /* background-color: #b30000; */
   color: rgb(0, 0, 0);
   margin-top: 10px;
   background-color: rgb(255, 255, 255);
@@ -169,12 +182,15 @@
 }
 .sidebar.close .nav-links li .sub-menu a {
   transition: all 0.3s ease-in-out;
-  padding: 5px 10px;
+  padding: 15px;
+  /* background-color: #b30000; */
 }
 .sidebar .nav-links li .sub-menu h1 {
-  text-align: center;
+  text-align: right;
+  /* justify-content: start; */
   position: relative;
   color: black;
+  /* background-color: #b30000; */
   font-weight: 800;
   height: 40px;
   padding-top: 8px;
@@ -187,12 +203,13 @@
 .sidebar.close .nav-links li .sub-menu {
   position: absolute;
   right: 100%;
-  text-align: center;
+  /* justify-content: right; */
+  /* text-align: right; */
   top: -10px;
   display: inline-block;
-  background-color: rgb(255, 130, 130, 0);
+  /* background-color:red; */
   pointer-events: none;
-  width: 190px;
+  width: 70%;
   margin-top: 0;
   padding: 10px 20px;
   border-radius: 6px 0 0 6px;
@@ -205,9 +222,10 @@
   top: 0;
   color: #f3ba2f;
   opacity: 1;
-  width: 230px;
+  width: 50vh;
   overflow: hidden;
   pointer-events: auto;
+  /* text-align: left; */
 }
 .sidebar .nav-links li .sub-menu .link-name {
   display: none;
@@ -226,13 +244,13 @@
   position: absolute;
   bottom: 0;
   margin: 0;
-  background: #ff0000;
+  background: #142028;
   transition: all 0.4s ease-in-out;
   display: flex;
   width:350px;
   height: 70px;
   align-items: center;
-  border-radius: 0 0 0 10px;
+  border-radius: 0 0 0 50px;
   overflow: hidden;
   justify-content: space-between;
 }

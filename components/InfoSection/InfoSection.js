@@ -1,10 +1,9 @@
 import React from 'react'
 import Link from "next/link";
 import { Button } from '../Button/ButtonElemnts';
-import Resp from '../flasher/resp';
 import React360Viewer from '../React360Viewer';
 import { InfoContainer, InfoWrapper, InfoRow, Column1, Column2, TextWrapper, TopLine, Heading, Subtitle, BtnWrap, Img, ImgWrap } from './InfoElements'
-
+// import Resp from '../flasher/resp';
 
 
 
@@ -38,7 +37,7 @@ const InfoSection = ({lightBg, id, topLine, headLine, description, img,display3D
                         <Column2>
                             <ImgWrap>
                             <div style={{display:resDisplay}}>
-                                <Resp/>
+                                {/* <Resp/> */}
                             </div>
                                 <Img src={img} alt={alt} style={{display:imgDisplay}} />
                                 <video  id='video' src={video} style={{display:videoDisplay}} 
@@ -50,7 +49,7 @@ const InfoSection = ({lightBg, id, topLine, headLine, description, img,display3D
                                     imagePath="/images/myarm"
                                     fileName="m{index}.jpg"
                                     autoplay={0}
-                                    loop={10}
+                                    loop={3}
                                     />
                                 </div>
                             </ImgWrap>

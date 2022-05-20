@@ -9,7 +9,7 @@ export const ServicesContainer = styled.div`
     font-family: iransans;
     flex-direction: column;
     align-items: center;
-    background:  #F2F2F2;
+    background: linear-gradient(0deg, #045256, #142028);
     padding: 20px 0px;
     
     

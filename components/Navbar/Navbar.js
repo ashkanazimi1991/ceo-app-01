@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react'
-import {FaBars, FaWindows} from 'react-icons/fa'
+import { FaWindows} from 'react-icons/fa'
+import { CgSelect } from 'react-icons/cg'
 import { Nav, NavbarContainer, NavLogo, MobileIcon, NavMenu, NavItem, NavLinks, NavBtnLink, NavBtn,Img  } from './NavbarElements';
 import { IconContext } from 'react-icons/lib';
 import {animateScroll as scroll } from 'react-scroll';
@@ -35,13 +36,13 @@ const Navbar = ({toggle}) => {
                 
                 
                 <MobileIcon onClick={toggle} >
-                    <FaBars style={{color:`#fff`}} />
+                <CgSelect style={{color:`#fff`}} />
                 </MobileIcon>
                 <NavMenu>
                 
                 
                 <NavItem>
-                        <NavLinks to='home' smooth={true} duration={1000} spy={true} exact='true' offset={-80} activeClass='active' >صفحه اصلی</NavLinks>
+                        <NavLinks to='home' smooth={true} duration={1000} spy={true} exact='true' offset={-80} activeClass='active' >خدمات برنامه نویسی</NavLinks>
                     </NavItem>
 
                     <NavItem>
@@ -63,7 +64,7 @@ const Navbar = ({toggle}) => {
                     </NavItem>
                     <NavItem>
                         <NavLinks to='crypto'
-                        smooth={true} duration={1000} spy={true} exact='true' offset={-80} activeClass='active'>رمز ارز</NavLinks>
+                        smooth={true} duration={1000} spy={true} exact='true' offset={-80} activeClass='active'>کریپتو و بلاک چین</NavLinks>
                     </NavItem>
                     
                 </NavMenu>
