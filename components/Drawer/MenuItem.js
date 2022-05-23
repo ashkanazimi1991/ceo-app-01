@@ -1,74 +1,74 @@
-import {  BiBroadcast, BiBrain, BiPlanet,BiArrowFromTop,BiDollarCircle, BiChip } from "react-icons/bi";
+import { BiBroadcast, BiBrain, BiPlanet, BiArrowFromTop, BiDollarCircle, BiChip } from "react-icons/bi";
 import React, { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 
 const MenuItem = (props) => {
-  const { name, subMenus, to , number } = props;
+  const { name, subMenus, to, number } = props;
   const [expand, setExpand] = useState(false);
   let menuRef = useRef();
   useEffect(() => {
     document.addEventListener("mousedown", (event) => {
-      if(menuRef.current){
+      if (menuRef.current) {
         if (!menuRef.current.contains(event.target)) {
           setExpand(false);
         }
       }
-     
+
     });
   });
 
   return (
-    
-    <li ref={menuRef}  onClick={() => setExpand(perval=>!perval)}>
-      <div  className="icon-link">
+
+    <li ref={menuRef} onClick={() => setExpand(perval => !perval)}>
+      <div className="icon-link">
         <a>
           <div className="sidebar-logo">
             {(() => {
               switch (name) {
                 case "اخبار":
-                  return <BiPlanet id="drawer-icon"/>;
+                  return <BiPlanet id="drawer-icon" />;
                 case "WEB Service":
-                  return <BiPlanet id="drawer-icon"/>;
-                case "I O T" :
-                  return <BiBroadcast  id="drawer-icon"/>;
+                  return <BiPlanet id="drawer-icon" />;
+                case "I O T":
+                  return <BiBroadcast id="drawer-icon" />;
                 case "Robotic Automaiton":
-                  return <BiChip id="drawer-icon"/>;
+                  return <BiChip id="drawer-icon" />;
                 case "Artificial Intelligence":
-                  return <BiBrain  id="drawer-icon"/>;
+                  return <BiBrain id="drawer-icon" />;
                 case "Crypto Currency":
-                  return <BiDollarCircle  id="drawer-icon"/>;
+                  return <BiDollarCircle id="drawer-icon" />;
               }
             })()}
           </div>
-          
-            <span className="link-name">{name}</span>
-          
+
+          <Link href={to}>{<span className="link-name">{name} </span>}</Link>
+
         </a>
 
         <div className="sidebar-logo">
-          <BiArrowFromTop  id="drawer-icon" />
+          <BiArrowFromTop id="drawer-icon" />
         </div>
       </div>
-      {subMenus  ? (
+      {subMenus ? (
         <ul className={`sub-menu ${expand ? "active" : ""}`}>
-          {number === 1 ? 
+          {number ?
             <Link href={`/${to}`}>
-              {<h1  className="link-name"> {name}</h1>}
+              {<h1 className="link-name">{name}</h1>}
             </Link> :
-             <Link href={`/products/?slug=${to}`}>
-             {<h1  className="link-name"> {name}</h1>}
-           </Link>
-            }
+            <Link href={`/products/?slug=${to}`}>
+              {<h1 className="link-name"> {name}</h1>}
+            </Link>
+          }
           {subMenus.map((menu, index) => (
             <li key={index}>
-              {menu.number ? 
-              <Link  href={`/${menu.slug}`}>
-                {menu.name}
-              </Link> : 
-              <Link  href={`/products/?slug=${menu.slug}`}>
-              {menu.name}
-            </Link>
-            }
+              {menu.number ?
+                <Link href={`/${menu.slug}`}>
+                  {menu.name}
+                </Link> :
+                <Link href={`/products/?slug=${menu.slug}`}>
+                  {menu.name}
+                </Link>
+              }
             </li>
           ))}
         </ul>

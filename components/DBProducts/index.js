@@ -46,7 +46,7 @@ const index = ({productsList}) => {
           headers:{
             'Authorization': 'Token '+  token, 
           }
-        }).then(response => console.log(response));
+        }).then(response => toast.success("محصول مورد نظر به لیست علاقه مندی افزوده شد"));
       }else{
         toast.error("برای افزودن به لیست علاقه مندی ابتدا باید وارد شوید")
       }
@@ -54,20 +54,20 @@ const index = ({productsList}) => {
   return (
        <Row style={{width: '100%' , margin: '5% 0px' , direction:'rtl'}} justify='space-evenly'>
        {productsList.map(item =>
-            <Col key={item.id} xs={{span: 24 }} md={{span: 8}} lg={{span: 6}} xl={{span: 4}}>
+            <Col key={item.id} xs={{span: 24 }} md={{span: 12}} lg={{span: 8}} xl={{span: 6}}>
             <Card
             hoverable
             style={{ width: 300 , margin: '20px auto' }}
             actions={[
                 <Link href={`/products/${item.id}`} ><MenuOutlined  key="menu" /></Link>,
-                <ShoppingOutlined onClick={() => dispatch(addItem(item))} key="shopping" />,
+                <ShoppingOutlined onClick={() => {dispatch(addItem(item)) ; toast.success("محصول مورد نظر به سبد خرید افزوده شد") }} key="shopping" />,
                 <HeartOutlined onClick={() => likeHandler(item.id)} key="heart" style={{color: item.is_fav ? 'red' : null}}/>
           ]}
         >
 
               {loading ? <Skeleton.Image style={{width: '100%!important'}}  /> : ''}
               <Skeleton loading={loading} active >
-               <img className='productsImage' src={item.image} alt="image" />
+               <img className='productsImage' src={item.thumbnail} alt="image" />
                <Divider>{item.name}</Divider>
                 <Meta
                 description={descreption(item.body)}

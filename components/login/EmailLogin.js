@@ -1,6 +1,6 @@
 import React,{useState} from 'react'
 import { useRouter } from 'next/router';
-
+import Link from "next/link"
 
 //import styles
 import styles from "./login.module.css"
@@ -35,7 +35,7 @@ const EmailLogin = () => {
                 email: email.emailAddress,
             }).then(response => {if (response) {
                 localStorage.setItem('key' , response.data.key);
-                redirect.push("/login/emailLoginConfirmation")
+                redirect.push("/auth/emailLoginConfirmation")
             }})
         }else{
             toast.error("ایمیل وارد شده صحیح نمیباشد")

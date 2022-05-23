@@ -1,4 +1,4 @@
-import React,{useEffect, useState , useRef} from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import axios from 'axios'
 import Head from 'next/head'
 import styles from "../Profile/Profile.module.css"
@@ -15,19 +15,33 @@ import 'react-toastify/dist/ReactToastify.css';
 
 
 //get data from database
-export async function getServerSideProps(context){
-  const parsedCookies = cookie.parse(context.req.headers.cookie);
-  const data = await axios.get(`${MainLink}/user/profile/`, 
-  {
-      headers:{
-        'Authorization': 'Token '+  parsedCookies.token, 
-    }},
+export async function getServerSideProps(context) {
+
+  let parsedCookies = context.req.headers.cookie ? cookie.parse(context.req.headers.cookie) : false ;
+  let token = parsedCookies ? parsedCookies.token : null ;
+
+  if (token) {
+    // const parsedCookies = cookie.parse(context.req.headers.cookie);
+    const data = await axios.get(`${MainLink}/user/profile/`,
+      {
+        headers: {
+          'Authorization': 'Token ' + token,
+        }
+      },
     )
     const response = data.data
 
-    return{
-      props:{data: response , tokenCookie: parsedCookies}
+    return {
+      props: { data: response, tokenCookie: parsedCookies }
     }
+  } else {
+    return {
+      redirect: {
+        permanent: false,
+        destination: "/login",
+      },
+    }
+  }
 }
 
 //modal styles
@@ -43,8 +57,8 @@ const customStyles = {
   },
 }
 
-const index = ({data , tokenCookie}) => {
- 
+const index = ({ data, tokenCookie }) => {
+
   const ProvincesNames = [
     {
       "id": 1,
@@ -201,7 +215,7 @@ const index = ({data , tokenCookie}) => {
       "name": "یزد",
       "slug": "یزد"
     }
-]
+  ]
   const cities = [
     {
       "id": 1,
@@ -6917,7 +6931,7 @@ const index = ({data , tokenCookie}) => {
       "slug": "رضوانشهر",
       "province_id": 31
     }
-]
+  ]
 
   const router = useRouter();
   const refreshData = () => {
@@ -6931,16 +6945,16 @@ const index = ({data , tokenCookie}) => {
   const thridFileUpload = useRef(null);
 
   //for pictures
-  const [photo , setPhoto] = useState(null)
-  const [photo1 , setPhoto1] = useState(null)
-  const [photo2 , setPhoto2] = useState(null)
-  const [avatar , setAvatar] = useState(null)
-  const [is_disable , setIs_disable] = useState(true)
-  const fields_Name = ['first_name' , 'last_name' , 'email' , 'national_code' , 'state' , 'city' ,
-   'job' , 'address' , 'plate' , 'zip_code']
+  const [photo, setPhoto] = useState(null)
+  const [photo1, setPhoto1] = useState(null)
+  const [photo2, setPhoto2] = useState(null)
+  const [avatar, setAvatar] = useState(null)
+  const [is_disable, setIs_disable] = useState(true)
+  const fields_Name = ['first_name', 'last_name', 'email', 'national_code', 'state', 'city',
+    'job', 'address', 'plate', 'zip_code']
 
   //manage the open/close modal 
-  const [modal , setMoadl] = useState({
+  const [modal, setMoadl] = useState({
     is_Name_Modal: false,
     is_national_code_Modal: false,
     is_email_Modal: false,
@@ -6952,7 +6966,7 @@ const index = ({data , tokenCookie}) => {
   })
 
   //user profile information 
-  const [userInfo , setUserInfo] = useState({
+  const [userInfo, setUserInfo] = useState({
     username: "",
     first_name: "",
     last_name: "",
@@ -6971,13 +6985,14 @@ const index = ({data , tokenCookie}) => {
   })
 
   //set user information from database in state 
-  useEffect(() =>{
-    setUserInfo({...userInfo, 
+  useEffect(() => {
+    setUserInfo({
+      ...userInfo,
       username: data.username,
       first_name: data.first_name,
-      last_name: data.last_name ,
-      email: data.email ,
-      national_code: data.national_code ,
+      last_name: data.last_name,
+      email: data.email,
+      national_code: data.national_code,
       state: data.state,
       city: data.city,
       job: data.job,
@@ -6989,10 +7004,10 @@ const index = ({data , tokenCookie}) => {
       Incubation_license: data.Incubation_license,
       other: data.other,
     })
-  },[])
+  }, [])
 
   //extra state for when user submit the btn data will save in main state
-  const [userInfoExtra , setUserInfoExtra] = useState({
+  const [userInfoExtra, setUserInfoExtra] = useState({
     first_name: "",
     last_name: "",
     email: "",
@@ -7014,318 +7029,318 @@ const index = ({data , tokenCookie}) => {
   const inputs_Onchange_Handler = (event) => {
     //check the button when the data is same button change to disable mode
     event.target.value === data[event.target.name] ? setIs_disable(true) : setIs_disable(false)
-    setUserInfoExtra({...userInfoExtra , [event.target.name]: event.target.value});
+    setUserInfoExtra({ ...userInfoExtra, [event.target.name]: event.target.value });
     console.log(userInfoExtra);
   }
 
   //when user click the submit user information set from user extra information
-  const inputs_Click_Handler = (names) =>{
+  const inputs_Click_Handler = (names) => {
     names.map(item => userInfo[item] = userInfoExtra[item].length > 0 ? userInfoExtra[item] : userInfo[item])
     console.log(userInfo);
   }
 
 
   //when user close the modal the fields with old data will be remove
-  const Modal_close_handler = (Moad_Name) =>{
-    setMoadl({...modal , [Moad_Name]: false})
-    fields_Name.map(item => userInfoExtra[item] =  '')
+  const Modal_close_handler = (Moad_Name) => {
+    setMoadl({ ...modal, [Moad_Name]: false })
+    fields_Name.map(item => userInfoExtra[item] = '')
   }
 
   // set images in state
-  const fileuploadHandler = async (event) =>{
-    if(event.target.name === "Avatar"){
-      setUserInfo({...userInfo ,avatar: URL.createObjectURL(event.target.files[0])})
+  const fileuploadHandler = async (event) => {
+    if (event.target.name === "Avatar") {
+      setUserInfo({ ...userInfo, avatar: URL.createObjectURL(event.target.files[0]) })
       setAvatar(event.target.files[0])
     }
-}
-// 
+  }
+  // 
 
 
   // the preview image remove and the div will be showen
-  const clickHandler = (event) =>{
-    if(event.target.id === "national_code_imageBtn"){
-    setUserInfo({...userInfo , national_code_image: null})
-    }else if(event.target.id === "Incubation_licenseBtn"){
-    setUserInfo({...userInfo , Incubation_license: null})
-    }else if(event.target.id === "otherBtn"){
-    setUserInfo({...userInfo , other: null})
+  const clickHandler = (event) => {
+    if (event.target.id === "national_code_imageBtn") {
+      setUserInfo({ ...userInfo, national_code_image: null })
+    } else if (event.target.id === "Incubation_licenseBtn") {
+      setUserInfo({ ...userInfo, Incubation_license: null })
+    } else if (event.target.id === "otherBtn") {
+      setUserInfo({ ...userInfo, other: null })
     }
-}
-// 
+  }
+  // 
 
-// because the hidden input work
-const AvatarHandleUpload = () => {
-  Avatar.current.click();
+  // because the hidden input work
+  const AvatarHandleUpload = () => {
+    Avatar.current.click();
   };
-// 
+  // 
 
-//send data to database
-const submitHandler = async (event) =>{
-  console.log(userInfo);
-  const Form_Data = new FormData();
-  userInfo.avatar  && avatar && Form_Data.append('avatar' , avatar , avatar.name );
-  userInfo.first_name && Form_Data.append('first_name' , userInfo.first_name);
-  userInfo.last_name && Form_Data.append('last_name' , userInfo.last_name);
-  userInfo.email && userInfo.email && Form_Data.append('email' , userInfo.email);
-  userInfo.national_code && Form_Data.append('national_code' , userInfo.national_code);
-  userInfo.state && Form_Data.append('state' , userInfo.state);
-  userInfo.city && Form_Data.append('city' , userInfo.city);
-  userInfo.job && Form_Data.append('job' , userInfo.job);
-  userInfo.address && Form_Data.append('address' , userInfo.address);
-  userInfo.plate && Form_Data.append('plate' , userInfo.plate);
-  userInfo.zip_code && Form_Data.append('zip_code' , userInfo.zip_code);
-  event.preventDefault();
-  axios({
-    method: "PUT",
-    url: `${MainLink}/user/profile/`,
-    data: Form_Data,
-    headers: { 'Authorization': 'Token '+ tokenCookie.token },
-  })
-    .then(response => {
-      if (response) {
-        toast.success("تغییرات با موفقیت ثبت شد");
-        console.log(response);
-        refreshData();
-      }
+  //send data to database
+  const submitHandler = async (event) => {
+    console.log(userInfo);
+    const Form_Data = new FormData();
+    userInfo.avatar && avatar && Form_Data.append('avatar', avatar, avatar.name);
+    userInfo.first_name && Form_Data.append('first_name', userInfo.first_name);
+    userInfo.last_name && Form_Data.append('last_name', userInfo.last_name);
+    userInfo.email && userInfo.email && Form_Data.append('email', userInfo.email);
+    userInfo.national_code && Form_Data.append('national_code', userInfo.national_code);
+    userInfo.state && Form_Data.append('state', userInfo.state);
+    userInfo.city && Form_Data.append('city', userInfo.city);
+    userInfo.job && Form_Data.append('job', userInfo.job);
+    userInfo.address && Form_Data.append('address', userInfo.address);
+    userInfo.plate && Form_Data.append('plate', userInfo.plate);
+    userInfo.zip_code && Form_Data.append('zip_code', userInfo.zip_code);
+    event.preventDefault();
+    axios({
+      method: "PUT",
+      url: `${MainLink}/user/profile/`,
+      data: Form_Data,
+      headers: { 'Authorization': 'Token ' + tokenCookie.token },
     })
-    .catch((error) => {
-      if(error.response){
-        console.log(error.response.data); // => the response payload 
-        toast.success("موارد وارد شده صحیح نمیباشد");
-      }
-  });
-}
+      .then(response => {
+        if (response) {
+          toast.success("تغییرات با موفقیت ثبت شد");
+          console.log(response);
+          refreshData();
+        }
+      })
+      .catch((error) => {
+        if (error.response) {
+          console.log(error.response.data); // => the response payload 
+          toast.success("موارد وارد شده صحیح نمیباشد");
+        }
+      });
+  }
   return (
     <div className={styles.container}>
-       <Head>
+      <Head>
         <title>اطلاعات حساب کاربری</title>
         <meta name="description" content="Generated by create next app" />
-        <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous"/>
+        <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous" />
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Navbar />
-        <section className={styles.Flex}>
-          <section className={styles.main}>
-            <section className={styles.User_Info_Details_Box}>
-              <section className={styles.Header_User_Info_Box}>
-                  <h4 style={{fontSize: '16px'}}>اطلاعات حساب کاربری</h4>
-                </section>
-                <hr />
-                <div style={{position: 'relative'}} className={styles.Header_User_Info_Box_Avatar}>
-                  <input style={{display:"none"}} name="Avatar" onChange={fileuploadHandler} type="file" 
-                            ref={Avatar} />
-                  <img onClick={() => AvatarHandleUpload()} src={userInfo.avatar !== null ? userInfo.avatar : avatarLogo.src } alt="logo" />
-                  <i onClick={() => AvatarHandleUpload()} style={{position: 'absolute' , top: '50%' , right: '0' ,transform: 'translate(-50%,-50%)' , color: 'white!important' }} className={`${styles.avatarHover} fas fa-2x fa-images`}></i>
-                </div>
-                <section className={styles.User_Info_Details_field}>
-                  <section style={{borderTopRightRadius: '8px'}} className={styles.User_Info_Details_field_Grid}>
-                    <p>نام و نام خانوادگی</p>
-                    <div className={styles.User_Info_Details_field_Flex}>
-                      <p>{data.first_name  ? data.first_name : 'نام خود را وارد کنید '}  {data.last_name ? data.last_name : ' نام خانوادگی خود را وارد کنید'}</p>
-                      <i onClick={(() => setMoadl({...modal , is_Name_Modal: true}))} className="fas fa-edit"></i>
-                      <Modal
-                        
-                        isOpen={modal.is_Name_Modal}
-                        ariaHideApp={false}
-                        style={customStyles}
-                        contentLabel="Name Modal"
-                      >
-                        <div className={styles.Header_Modal}>
-                          <p style={{margin: '0'}}>ثبت اطلاعات شناسایی</p>
-                          <button onClick={() => Modal_close_handler('is_Name_Modal')} className={styles.Header_Modal_Close}><i className="fas fa-times"></i></button>
-                        </div>
-                        <hr />
-                        <div style={{textAlign: 'right' , marginTop: '10%' , fontFamily: 'sansiran'}}>
-                           <p>لطفا نام و نام خانوادگی خورد را وارد کنید</p>
-                        </div>
-                        <form onSubmit={submitHandler} className={styles.Header_Modal_Form}>
-                          <section className={styles.Header_Modal_Flex}>
-                            <div className={styles.Header_Modal_Inputs}>
-                              <label>نام</label>
-                              <input onChange={inputs_Onchange_Handler} defaultValue={data.first_name} name="first_name" type="text"  />
-                            </div>
-                            <div className={styles.Header_Modal_Inputs}>
-                              <label>نام خانوادگی</label>
-                              <input onChange={inputs_Onchange_Handler} defaultValue={data.last_name} name="last_name" type="text"  />
-                            </div>
-                          </section>
-                          <div className={styles.Header_Modal_Buttons}>
-                            <button onClick={() => Modal_close_handler('is_Name_Modal')} className={styles.Header_Modal_Buttons_Back}>بازگشت</button>
-                            <button onClick={() => inputs_Click_Handler(['first_name','last_name'])} disabled={is_disable} style={is_disable ? {color: 'grey' , border: '1px solid grey'} : {color: 'rgb(27, 154, 204)' , border: '1px solid rgb(27, 154, 204)'}} className={styles.Header_Modal_Buttons_Submit}>ذخیره</button>
-                          </div>
-                        </form>
-                      </Modal>
-                    </div>
-                  </section>
-                  <section className={styles.User_Info_Details_field_Grid}>
-                    <p>ایمیل</p>
-                    <div className={styles.User_Info_Details_field_Flex}>
-                      <p>{data.email ? data.email : 'ایمیل خود را وارد کنید'}</p>
-                      <i onClick={(() => setMoadl({...modal , is_email_Modal: true}))} className="fas fa-edit"></i>
-                      <Modal
-                        
-                        isOpen={modal.is_email_Modal}
-                         ariaHideApp={false}
-                        style={customStyles}
-                        contentLabel="Email Modal"
-                      >
-                        <div className={styles.Header_Modal}>
-                          <p style={{margin: '0'}}>ثبت اطلاعات شناسایی</p>
-                          <button onClick={() => Modal_close_handler('is_email_Modal')}  className={styles.Header_Modal_Close}><i className="fas fa-times"></i></button>
-                        </div>
-                        <hr />
-                        <div style={{textAlign: 'right' , marginTop: '10%' , fontFamily: 'sansiran'}}>
-                           <p>لطفا ایمیل خود را وارد کنید</p>
-                        </div>
-                        <form onSubmit={submitHandler} className={styles.Header_Modal_Form}>
-                          <section className={styles.Header_Modal_Flex_One_Item}>
-                            <div className={styles.Header_Modal_Inputs}>
-                              <label>ایمیل</label>
-                              <input onChange={inputs_Onchange_Handler} style={{width: '100%'}} defaultValue={data.email} name="email" type="email"/>
-                            </div>
-                          </section>
-                          <div className={styles.Header_Modal_Buttons}>
-                            <button onClick={() => Modal_close_handler('is_email_Modal')} className={styles.Header_Modal_Buttons_Back}>بازگشت</button>
-                            <button onClick={() => inputs_Click_Handler(['email'])} disabled={is_disable} style={is_disable ? {color: 'grey' , border: '1px solid grey'} : {color: 'rgb(27, 154, 204)' , border: '1px solid rgb(27, 154, 204)'}} className={styles.Header_Modal_Buttons_Submit}>ذخیره</button>
-                          </div>
-                        </form>
-                      </Modal>
-                    </div>
-                  </section>
-                  <section className={styles.User_Info_Details_field_Grid}>
-                    <p>استان</p>
-                    <div className={styles.User_Info_Details_field_Flex}>
-                      {data.state > 0 ? <p>{ProvincesNames.find(item => item.id == data.state).name}</p> : <p>استان خود را انتخاب کنید</p>}
-                      <i onClick={(() => setMoadl({...modal , is_State_Modal: true}))} className="fas fa-edit"></i>
-                      <Modal
-                        
-                        isOpen={modal.is_State_Modal}
-                        ariaHideApp={false}
-                        style={customStyles}
-                        contentLabel="national code Modal"
-                      >
-                        <div className={styles.Header_Modal}>
-                          <p style={{margin: '0'}}>ثبت اطلاعات شناسایی</p>
-                          <button onClick={() => Modal_close_handler('is_State_Modal')}  className={styles.Header_Modal_Close}><i className="fas fa-times"></i></button>
-                        </div>
-                        <hr />
-                        <div style={{textAlign: 'right' , marginTop: '10%' , fontFamily: 'sansiran'}}>
-                           <p>لطفا استان را انتخاب کنید</p>
-                        </div>
-                        <form onSubmit={submitHandler} className={styles.Header_Modal_Form}>
-                          <section className={styles.Header_Modal_Flex_One_Item}>
-                            <div className={styles.Header_Modal_Inputs}>
-                              <label>استان</label>
-                              <select name="state" onChange={event => inputs_Onchange_Handler(event)} className="form-select" aria-label="Default select example">
-                                {data.state > 0 ? <option hidden >{ProvincesNames.find(item => item.id == data.state).name}</option> : <option hidden >استان خود را انتخاب کنید</option>}
-                                {ProvincesNames.map(item => <option key={item.id} value={item.id}>{item.name}</option>)}
-                              </select>
-                            </div>
-                          </section>
-                          <div className={styles.Header_Modal_Buttons}>
-                            <button onClick={() => Modal_close_handler('is_State_Modal')} className={styles.Header_Modal_Buttons_Back}>بازگشت</button>
-                            <button onClick={() => inputs_Click_Handler(['state'])} disabled={is_disable} style={is_disable ? {color: 'grey' , border: '1px solid grey'} : {color: 'rgb(27, 154, 204)' , border: '1px solid rgb(27, 154, 204)'}} className={styles.Header_Modal_Buttons_Submit}>ذخیره</button>
-                          </div>
-                        </form>
-                      </Modal>
-                    </div>
-                  </section>
-                  <section className={styles.User_Info_Details_field_Grid}>
-                    <p>شهر</p>
-                    <div className={styles.User_Info_Details_field_Flex}>
-                      <p>{data.city > 0 ? cities.find(item => item.id == data.city).name : 'شهر خود را انتخاب کنید'}</p>
-                      <i onClick={(() => setMoadl({...modal , is_City_Modal: true}))} className="fas fa-edit"></i>
-                      <Modal
-                        
-                        isOpen={modal.is_City_Modal}
-                        ariaHideApp={false}
-                        style={customStyles}
-                        contentLabel="national code Modal"
-                      >
-                        <div className={styles.Header_Modal}>
-                          <p style={{margin: '0'}}>ثبت اطلاعات شناسایی</p>
-                          <button onClick={() => Modal_close_handler('is_City_Modal')}  className={styles.Header_Modal_Close}><i className="fas fa-times"></i></button>
-                        </div>
-                        <hr />
-                        <div style={{textAlign: 'right' , marginTop: '10%' , fontFamily: 'sansiran'}}>
-                           <p>لطفا شهر را انتخاب کنید</p>
-                        </div>
-                        <form onSubmit={submitHandler} className={styles.Header_Modal_Form}>
-                          <section className={styles.Header_Modal_Flex_One_Item}>
-                            <div className={styles.Header_Modal_Inputs}>
-                              <label>شهر</label>
-                              <select name="city" onChange={event => inputs_Onchange_Handler(event)} className="form-select" aria-label="Default select example">
-                                {data.city > 0 ? <option hidden >{cities.find(item => item.id == data.city).name}</option> : <option hidden >شهر خود را انتخاب کنید</option>}
-                                {cities.map(item => item.province_id === Number(userInfo.state) && <option key={item.id} value={item.id}>{item.name}</option>)}
-                              </select>
-                            </div>
-                          </section>
-                          <div className={styles.Header_Modal_Buttons}>
-                            <button onClick={() => Modal_close_handler('is_City_Modal')} className={styles.Header_Modal_Buttons_Back}>بازگشت</button>
-                            <button onClick={() => inputs_Click_Handler(['city'])} disabled={is_disable} style={is_disable ? {color: 'grey' , border: '1px solid grey'} : {color: 'rgb(27, 154, 204)' , border: '1px solid rgb(27, 154, 204)'}} className={styles.Header_Modal_Buttons_Submit}>ذخیره</button>
-                          </div>
-                        </form>
-                      </Modal>
-                    </div>
-                  </section>
-                  <section className={styles.User_Info_Details_field_Grid}>
-                    <p>آدرس</p>
-                    <div className={styles.User_Info_Details_field_Flex}>
-                      <p>{data.address} {data.plate && "پلاک"} {data.plate} {data.zip_code && "کد پستی"} {data.zip_code}</p>
-                      <i onClick={(() => setMoadl({...modal , is_address_Modal: true}))} className="fas fa-edit"></i>
-                      <Modal
-                        isOpen={modal.is_address_Modal}
-                        ariaHideApp={false}
-                        style={customStyles}
-                        contentLabel="Name Modal"
-                      >
-                        <div className={styles.Header_Modal}>
-                          <p style={{margin: '0'}}>ثبت اطلاعات شناسایی</p>
-                          <button onClick={() => Modal_close_handler('is_address_Modal')} className={styles.Header_Modal_Close}><i className="fas fa-times"></i></button>
-                        </div>
-                        <hr />
-                        <div style={{textAlign: 'right' , marginTop: '10%' , fontFamily: 'sansiran'}}>
-                           <p>لطفا آدرس خورد را وارد کنید</p>
-                        </div>
-                        <form onSubmit={submitHandler} className={styles.Header_Modal_Form}>
-                          <section className={styles.Header_Modal_Flex}>
-                            <div className={styles.Header_Modal_Inputs}>
-                              <label>آدرس</label>
-                              <input onChange={inputs_Onchange_Handler} defaultValue={data.address} name="address" type="text"/>
-                            </div>
-                            <div className={styles.Header_Modal_Inputs}>
-                              <label>پلاک</label>
-                              <input onChange={inputs_Onchange_Handler} defaultValue={data.plate} name="plate" type="text"/>
-                            </div>
-                            <div style={{marginTop: '10px'}} className={styles.Header_Modal_Inputs}>
-                              <label>کد پستی</label>
-                              <input onChange={inputs_Onchange_Handler} defaultValue={data.zip_code} name="zip_code" type="text"/>
-                            </div>
-                          </section>
-                          <div className={styles.Header_Modal_Buttons}>
-                            <button  onClick={() => Modal_close_handler('is_address_Modal')} className={styles.Header_Modal_Buttons_Back}>بازگشت</button>
-                            <button onClick={() => inputs_Click_Handler(['address' , 'plate' , 'zip_code'])} disabled={is_disable} style={is_disable ? {color: 'grey' , border: '1px solid grey'} : {color: 'rgb(27, 154, 204)' , border: '1px solid rgb(27, 154, 204)'}} className={styles.Header_Modal_Buttons_Submit}>ذخیره</button>
-                          </div>
-                        </form>
-                      </Modal>
-                    </div>
-                  </section>
-                </section>
-                <form onSubmit={submitHandler} className={styles.Images_Box}>
-                    <div className={styles.Images_Box_Submit}>
-                      <input type="submit" value="ثبت تغییرات" />
-                    </div>
-                  </form>
+      <section className={styles.Flex}>
+        <section className={styles.main}>
+          <section className={styles.User_Info_Details_Box}>
+            <section className={styles.Header_User_Info_Box}>
+              <h4 style={{ fontSize: '16px' }}>اطلاعات حساب کاربری</h4>
             </section>
+            <hr />
+            <div style={{ position: 'relative' }} className={styles.Header_User_Info_Box_Avatar}>
+              <input style={{ display: "none" }} name="Avatar" onChange={fileuploadHandler} type="file"
+                ref={Avatar} />
+              <img onClick={() => AvatarHandleUpload()} src={userInfo.avatar !== null ? userInfo.avatar : avatarLogo.src} alt="logo" />
+              <i onClick={() => AvatarHandleUpload()} style={{ position: 'absolute', top: '50%', right: '0', transform: 'translate(-50%,-50%)', color: 'white!important' }} className={`${styles.avatarHover} fas fa-2x fa-images`}></i>
+            </div>
+            <section className={styles.User_Info_Details_field}>
+              <section style={{ borderTopRightRadius: '8px' }} className={styles.User_Info_Details_field_Grid}>
+                <p>نام و نام خانوادگی</p>
+                <div className={styles.User_Info_Details_field_Flex}>
+                  <p>{data.first_name ? data.first_name : 'نام خود را وارد کنید '}  {data.last_name ? data.last_name : ' نام خانوادگی خود را وارد کنید'}</p>
+                  <i onClick={(() => setMoadl({ ...modal, is_Name_Modal: true }))} className="fas fa-edit"></i>
+                  <Modal
+
+                    isOpen={modal.is_Name_Modal}
+                    ariaHideApp={false}
+                    style={customStyles}
+                    contentLabel="Name Modal"
+                  >
+                    <div className={styles.Header_Modal}>
+                      <p style={{ margin: '0' }}>ثبت اطلاعات شناسایی</p>
+                      <button onClick={() => Modal_close_handler('is_Name_Modal')} className={styles.Header_Modal_Close}><i className="fas fa-times"></i></button>
+                    </div>
+                    <hr />
+                    <div style={{ textAlign: 'right', marginTop: '10%', fontFamily: 'sansiran' }}>
+                      <p>لطفا نام و نام خانوادگی خورد را وارد کنید</p>
+                    </div>
+                    <form onSubmit={submitHandler} className={styles.Header_Modal_Form}>
+                      <section className={styles.Header_Modal_Flex}>
+                        <div className={styles.Header_Modal_Inputs}>
+                          <label>نام</label>
+                          <input onChange={inputs_Onchange_Handler} defaultValue={data.first_name} name="first_name" type="text" />
+                        </div>
+                        <div className={styles.Header_Modal_Inputs}>
+                          <label>نام خانوادگی</label>
+                          <input onChange={inputs_Onchange_Handler} defaultValue={data.last_name} name="last_name" type="text" />
+                        </div>
+                      </section>
+                      <div className={styles.Header_Modal_Buttons}>
+                        <button onClick={() => Modal_close_handler('is_Name_Modal')} className={styles.Header_Modal_Buttons_Back}>بازگشت</button>
+                        <button onClick={() => inputs_Click_Handler(['first_name', 'last_name'])} disabled={is_disable} style={is_disable ? { color: 'grey', border: '1px solid grey' } : { color: 'rgb(27, 154, 204)', border: '1px solid rgb(27, 154, 204)' }} className={styles.Header_Modal_Buttons_Submit}>ذخیره</button>
+                      </div>
+                    </form>
+                  </Modal>
+                </div>
+              </section>
+              <section className={styles.User_Info_Details_field_Grid}>
+                <p>ایمیل</p>
+                <div className={styles.User_Info_Details_field_Flex}>
+                  <p>{data.email ? data.email : 'ایمیل خود را وارد کنید'}</p>
+                  <i onClick={(() => setMoadl({ ...modal, is_email_Modal: true }))} className="fas fa-edit"></i>
+                  <Modal
+
+                    isOpen={modal.is_email_Modal}
+                    ariaHideApp={false}
+                    style={customStyles}
+                    contentLabel="Email Modal"
+                  >
+                    <div className={styles.Header_Modal}>
+                      <p style={{ margin: '0' }}>ثبت اطلاعات شناسایی</p>
+                      <button onClick={() => Modal_close_handler('is_email_Modal')} className={styles.Header_Modal_Close}><i className="fas fa-times"></i></button>
+                    </div>
+                    <hr />
+                    <div style={{ textAlign: 'right', marginTop: '10%', fontFamily: 'sansiran' }}>
+                      <p>لطفا ایمیل خود را وارد کنید</p>
+                    </div>
+                    <form onSubmit={submitHandler} className={styles.Header_Modal_Form}>
+                      <section className={styles.Header_Modal_Flex_One_Item}>
+                        <div className={styles.Header_Modal_Inputs}>
+                          <label>ایمیل</label>
+                          <input onChange={inputs_Onchange_Handler} style={{ width: '100%' }} defaultValue={data.email} name="email" type="email" />
+                        </div>
+                      </section>
+                      <div className={styles.Header_Modal_Buttons}>
+                        <button onClick={() => Modal_close_handler('is_email_Modal')} className={styles.Header_Modal_Buttons_Back}>بازگشت</button>
+                        <button onClick={() => inputs_Click_Handler(['email'])} disabled={is_disable} style={is_disable ? { color: 'grey', border: '1px solid grey' } : { color: 'rgb(27, 154, 204)', border: '1px solid rgb(27, 154, 204)' }} className={styles.Header_Modal_Buttons_Submit}>ذخیره</button>
+                      </div>
+                    </form>
+                  </Modal>
+                </div>
+              </section>
+              <section className={styles.User_Info_Details_field_Grid}>
+                <p>استان</p>
+                <div className={styles.User_Info_Details_field_Flex}>
+                  {data.state > 0 ? <p>{ProvincesNames.find(item => item.id == data.state).name}</p> : <p>استان خود را انتخاب کنید</p>}
+                  <i onClick={(() => setMoadl({ ...modal, is_State_Modal: true }))} className="fas fa-edit"></i>
+                  <Modal
+
+                    isOpen={modal.is_State_Modal}
+                    ariaHideApp={false}
+                    style={customStyles}
+                    contentLabel="national code Modal"
+                  >
+                    <div className={styles.Header_Modal}>
+                      <p style={{ margin: '0' }}>ثبت اطلاعات شناسایی</p>
+                      <button onClick={() => Modal_close_handler('is_State_Modal')} className={styles.Header_Modal_Close}><i className="fas fa-times"></i></button>
+                    </div>
+                    <hr />
+                    <div style={{ textAlign: 'right', marginTop: '10%', fontFamily: 'sansiran' }}>
+                      <p>لطفا استان را انتخاب کنید</p>
+                    </div>
+                    <form onSubmit={submitHandler} className={styles.Header_Modal_Form}>
+                      <section className={styles.Header_Modal_Flex_One_Item}>
+                        <div className={styles.Header_Modal_Inputs}>
+                          <label>استان</label>
+                          <select name="state" onChange={event => inputs_Onchange_Handler(event)} className="form-select" aria-label="Default select example">
+                            {data.state > 0 ? <option hidden >{ProvincesNames.find(item => item.id == data.state).name}</option> : <option hidden >استان خود را انتخاب کنید</option>}
+                            {ProvincesNames.map(item => <option key={item.id} value={item.id}>{item.name}</option>)}
+                          </select>
+                        </div>
+                      </section>
+                      <div className={styles.Header_Modal_Buttons}>
+                        <button onClick={() => Modal_close_handler('is_State_Modal')} className={styles.Header_Modal_Buttons_Back}>بازگشت</button>
+                        <button onClick={() => inputs_Click_Handler(['state'])} disabled={is_disable} style={is_disable ? { color: 'grey', border: '1px solid grey' } : { color: 'rgb(27, 154, 204)', border: '1px solid rgb(27, 154, 204)' }} className={styles.Header_Modal_Buttons_Submit}>ذخیره</button>
+                      </div>
+                    </form>
+                  </Modal>
+                </div>
+              </section>
+              <section className={styles.User_Info_Details_field_Grid}>
+                <p>شهر</p>
+                <div className={styles.User_Info_Details_field_Flex}>
+                  <p>{data.city > 0 ? cities.find(item => item.id == data.city).name : 'شهر خود را انتخاب کنید'}</p>
+                  <i onClick={(() => setMoadl({ ...modal, is_City_Modal: true }))} className="fas fa-edit"></i>
+                  <Modal
+
+                    isOpen={modal.is_City_Modal}
+                    ariaHideApp={false}
+                    style={customStyles}
+                    contentLabel="national code Modal"
+                  >
+                    <div className={styles.Header_Modal}>
+                      <p style={{ margin: '0' }}>ثبت اطلاعات شناسایی</p>
+                      <button onClick={() => Modal_close_handler('is_City_Modal')} className={styles.Header_Modal_Close}><i className="fas fa-times"></i></button>
+                    </div>
+                    <hr />
+                    <div style={{ textAlign: 'right', marginTop: '10%', fontFamily: 'sansiran' }}>
+                      <p>لطفا شهر را انتخاب کنید</p>
+                    </div>
+                    <form onSubmit={submitHandler} className={styles.Header_Modal_Form}>
+                      <section className={styles.Header_Modal_Flex_One_Item}>
+                        <div className={styles.Header_Modal_Inputs}>
+                          <label>شهر</label>
+                          <select name="city" onChange={event => inputs_Onchange_Handler(event)} className="form-select" aria-label="Default select example">
+                            {data.city > 0 ? <option hidden >{cities.find(item => item.id == data.city).name}</option> : <option hidden >شهر خود را انتخاب کنید</option>}
+                            {cities.map(item => item.province_id === Number(userInfo.state) && <option key={item.id} value={item.id}>{item.name}</option>)}
+                          </select>
+                        </div>
+                      </section>
+                      <div className={styles.Header_Modal_Buttons}>
+                        <button onClick={() => Modal_close_handler('is_City_Modal')} className={styles.Header_Modal_Buttons_Back}>بازگشت</button>
+                        <button onClick={() => inputs_Click_Handler(['city'])} disabled={is_disable} style={is_disable ? { color: 'grey', border: '1px solid grey' } : { color: 'rgb(27, 154, 204)', border: '1px solid rgb(27, 154, 204)' }} className={styles.Header_Modal_Buttons_Submit}>ذخیره</button>
+                      </div>
+                    </form>
+                  </Modal>
+                </div>
+              </section>
+              <section className={styles.User_Info_Details_field_Grid}>
+                <p>آدرس</p>
+                <div className={styles.User_Info_Details_field_Flex}>
+                  <p>{data.address} {data.plate && "پلاک"} {data.plate} {data.zip_code && "کد پستی"} {data.zip_code}</p>
+                  <i onClick={(() => setMoadl({ ...modal, is_address_Modal: true }))} className="fas fa-edit"></i>
+                  <Modal
+                    isOpen={modal.is_address_Modal}
+                    ariaHideApp={false}
+                    style={customStyles}
+                    contentLabel="Name Modal"
+                  >
+                    <div className={styles.Header_Modal}>
+                      <p style={{ margin: '0' }}>ثبت اطلاعات شناسایی</p>
+                      <button onClick={() => Modal_close_handler('is_address_Modal')} className={styles.Header_Modal_Close}><i className="fas fa-times"></i></button>
+                    </div>
+                    <hr />
+                    <div style={{ textAlign: 'right', marginTop: '10%', fontFamily: 'sansiran' }}>
+                      <p>لطفا آدرس خورد را وارد کنید</p>
+                    </div>
+                    <form onSubmit={submitHandler} className={styles.Header_Modal_Form}>
+                      <section className={styles.Header_Modal_Flex}>
+                        <div className={styles.Header_Modal_Inputs}>
+                          <label>آدرس</label>
+                          <input onChange={inputs_Onchange_Handler} defaultValue={data.address} name="address" type="text" />
+                        </div>
+                        <div className={styles.Header_Modal_Inputs}>
+                          <label>پلاک</label>
+                          <input onChange={inputs_Onchange_Handler} defaultValue={data.plate} name="plate" type="text" />
+                        </div>
+                        <div style={{ marginTop: '10px' }} className={styles.Header_Modal_Inputs}>
+                          <label>کد پستی</label>
+                          <input onChange={inputs_Onchange_Handler} defaultValue={data.zip_code} name="zip_code" type="text" />
+                        </div>
+                      </section>
+                      <div className={styles.Header_Modal_Buttons}>
+                        <button onClick={() => Modal_close_handler('is_address_Modal')} className={styles.Header_Modal_Buttons_Back}>بازگشت</button>
+                        <button onClick={() => inputs_Click_Handler(['address', 'plate', 'zip_code'])} disabled={is_disable} style={is_disable ? { color: 'grey', border: '1px solid grey' } : { color: 'rgb(27, 154, 204)', border: '1px solid rgb(27, 154, 204)' }} className={styles.Header_Modal_Buttons_Submit}>ذخیره</button>
+                      </div>
+                    </form>
+                  </Modal>
+                </div>
+              </section>
+            </section>
+            <form onSubmit={submitHandler} className={styles.Images_Box}>
+              <div className={styles.Images_Box_Submit}>
+                <input type="submit" value="ثبت تغییرات" />
+              </div>
+            </form>
           </section>
-          <section className={styles.SideBar}>
-            <SideBar />
-          </section>
-          </section>
-          
-<ToastContainer />
+        </section>
+        <section className={styles.SideBar}>
+          <SideBar />
+        </section>
+      </section>
+
+      <ToastContainer />
     </div>
   );
 }

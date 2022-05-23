@@ -5,23 +5,36 @@ import styles from "../Wallet/Wallet.module.css"
 import Navbar from '../Navbar/index'
 import SideBar from '../SideBar/Index'
 import * as cookie from 'cookie'
-import {MainLink} from "../../components/baseUrl/BaseUrl";
+import {MainLink, MainLinkSingel} from "../../components/BaseUrl/BaseUrl";
 
 
 
 //get data from database
 export const getServerSideProps = async (context) => {
-    const parsedCookies = cookie.parse(context.req.headers.cookie);
+
+  let parsedCookies = context.req.headers.cookie ? cookie.parse(context.req.headers.cookie) : false ;
+  let token = parsedCookies ? parsedCookies.token : null ;
+
+  if (token) {
+    // const parsedCookies = cookie.parse(context.req.headers.cookie);
     const data = await axios.get(`${MainLink}/wallet/`, {
-        headers:{
-          'Authorization': 'Token '+ parsedCookies.token, 
+      headers:{
+        'Authorization': 'Token '+ parsedCookies.token, 
+    },
+  })
+    const response = data.data
+
+    return{
+      props:{data: response}
+    }
+  } else {
+    return {
+      redirect: {
+        permanent: false,
+        destination: "/login",
       },
-    })
-      const response = data.data
-  
-      return{
-        props:{data: response}
-      }
+    }
+  }
 }
 
 
@@ -33,7 +46,7 @@ function Wallet ({data}){
     }
 
     const payHandler = () =>{
-      fetch(`${BaseUrl}/goto_gateway-wallet/`, {
+      fetch(`${MainLinkSingel}/goto_gateway-wallet/`, {
         method: 'POST', 
         headers: {
               'Content-Type': 'application/json',
@@ -84,7 +97,7 @@ function Wallet ({data}){
                 <div className={styles.Money}>
                     <div className={styles.forPadding}>
                     <i className="fas fa-3x fa-coins"></i>
-                    <p className={styles.numbers}>{data.wallet}</p>
+                    <p className={styles.numbers}>{data}</p>
                     </div>
                     <div className={styles.bottomBox}>
                       <p style={{color: '#F0AD4E'}}>کیف پول (ریال)</p>

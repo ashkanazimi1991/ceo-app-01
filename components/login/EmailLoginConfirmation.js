@@ -5,6 +5,7 @@ import { useRouter } from 'next/router';
 //import modules
 import axios from 'axios';
 import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 //import styles
 import styles from "./login.module.css"

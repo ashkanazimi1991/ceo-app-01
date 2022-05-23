@@ -7,7 +7,7 @@ import * as cookie from 'cookie'
 //import components
 import Details from "../../components/DBProducts/Details"
 import Layout from '../../components/Adviser/Layout'
-import { MainLink } from '../../components/baseUrl/BaseUrl'
+import { MainLink } from '../../components/BaseUrl/BaseUrl'
 
 //import modules
 import axios from 'axios'
