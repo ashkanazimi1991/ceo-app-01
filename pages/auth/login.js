@@ -3,7 +3,7 @@ import Login from '../../components/login/Login'
 
 //import components
 
-const index = () => {
+const login = () => {
   return (
     <div>
         <Login />
@@ -11,4 +11,4 @@ const index = () => {
   )
 }
 
-export default index
+export default login

@@ -23,21 +23,23 @@ const index = () => {
   )
 }
 
-export async function getServerSideProps(context){
-    if (context.req.headers.cookie) {
-    
-        return{
-            props:{}
-        }
+export async function getServerSideProps(context) {
 
-  }else{
+  let parsedCookies = context.req.headers.cookie ? cookie.parse(context.req.headers.cookie) : false;
+  let token = parsedCookies ? parsedCookies.token : null;
+
+  if (token) {
     return {
-        redirect: {
-          permanent: false,
-          destination: "/login",
-        },
+      props: {}
+    }
+  } else {
+    return {
+      redirect: {
+        permanent: false,
+        destination: "/login",
+      },
+    }
   }
-}
 }
 
 export default index

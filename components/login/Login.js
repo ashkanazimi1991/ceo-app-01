@@ -1,6 +1,6 @@
 import React,{useState} from 'react'
 import { useRouter } from 'next/router';
-
+import Link from "next/link"
 
 //import styles
 import styles from "./login.module.css"
@@ -35,7 +35,7 @@ const Login = () => {
                 phone_number: phone_Number.phone_number,
             }).then(response => {if (response) {
                 localStorage.setItem('key' , response.data.key);
-                redirect.push("/login/loginConfirmation")
+                redirect.push("/auth/loginConfirmation")
             }})
         }else{
             toast.error("شماره وارد شده صحیح نمیباشد")
@@ -46,7 +46,7 @@ const Login = () => {
       <LoginLayout>
         <form>
             <div className={styles.title}>
-                <h1>ورود / ثبت نام</h1>
+                <h1>ورود</h1>
                 <hr />
                 <h6>
                 لطفا شماره خود را در کادر پایین وارد کنید                           
@@ -67,7 +67,7 @@ const Login = () => {
             </div>
             <div className="text-block text-center my-3">
                 <span className="text-small font-weight-semibold">اکانت ندارید ؟ </span>
-                <a href="register.html" className="text-black text-small">ثبت نام کنید</a>
+                <Link href="/auth/register" className="text-black text-small">ثبت نام کنید</Link>
             </div>
         </form>
     </LoginLayout>

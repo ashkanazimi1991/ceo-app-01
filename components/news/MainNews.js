@@ -1,7 +1,7 @@
 import { Col, Row ,Card , Skeleton , Divider , Avatar} from 'antd'
 import { UserOutlined } from '@ant-design/icons';
 import React,{useState , useEffect} from 'react'
-import { descreption } from '../function/splitText';
+import {  descreption } from '../function/splitText';
 import {ShoppingOutlined , MenuOutlined ,HeartOutlined} from '@ant-design/icons';
 import Link from 'next/link';
 const { Meta } = Card;
@@ -25,7 +25,7 @@ export const MainNews = ({newsList}) => {
             <Col xl={6} lg={8} md={12} sm={24}>
                 <Card
                     hoverable
-                    style={{ width: 300 , margin: '20px auto' , minHeight: '574px'}}
+                    style={{ width: 300 , margin: '20px auto' , minHeight: '510px'}}
                 >
 
                     {loading ? <Skeleton.Image style={{width: '100%!important'}}  /> : ''}

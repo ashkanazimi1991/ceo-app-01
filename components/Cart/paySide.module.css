@@ -1,0 +1,78 @@
+.container {
+  direction: rtl;
+
+}
+.main {
+  width: 100%;
+  height: 100%;
+  cursor: default;
+  /* width: 100%; */
+  background-color: #232f3e;
+  border-radius: 5px;
+}
+.subTotal {
+  width: 100%;
+  background-color: #fff;
+  padding: auto;
+  display: flex;
+  margin-top: 20px;
+  line-height: 50px;
+  justify-content: space-around;
+  flex-direction: row;
+  border-radius: 6px;
+  transition: all 0.5s ease-in-out;
+}
+.subTotal > h1 {
+    white-space: nowrap;
+    text-align: center;
+    font-size: 16px;
+}
+
+.subTotalPay {
+  width: 100%;
+  margin: 20px auto;
+  border-radius: 6px;
+  transition: all 0.5s ease-in-out;
+  text-align: center;
+}
+.subTotalPay > h1 {
+    white-space: nowrap;
+    text-align: center;
+    cursor: pointer;
+    color: #fd2600;
+
+
+}
+.subTotalPay button{
+  background-color: #39AE00!important;
+  background: none;
+  border: none;
+  color: #ffffff;
+  cursor: pointer;
+  width: 80%;
+  border-radius: 8px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+}
+.btnsBox{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.btnsBox h1{
+  font-size: 20px;
+}
+
+@media only screen and (max-width: 767.98px) {
+
+  .btnsBox{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
+  .btnsBox h1{
+    font-size: 14px;
+  }
+ 
+}
