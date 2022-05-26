@@ -1,40 +1,29 @@
 import React, { useState } from "react";
-
+import Link from "next/link"
 //import styles
 import styles from "./scrollitem.module.css";
 
-const ScrollItem = () => {
-  const [data, setData] = useState(
-    [
-    {
-      id: 1,
-      src: "https://www.visionarywebdesigns.co.uk/assets/images/portfolio/2.png",
-    },
-    {
-      id: 2,
-      src: "https://www.visionarywebdesigns.co.uk/assets/images/portfolio/2.png",
-    }
-  ]
-  );
-
+const ScrollItem = ({ projects }) => {
   const mouseHandler = (event) => {
     const scroll = event.target.scrollHeight - 500;
     event.target.style = `--scrollNumber: -${scroll}px`;
   };
   return (
     <div className={styles.container}>
-      {data.map((item) => (
-        <section key={item.id} className={styles.imageContainer}>
-          <img
-            onMouseEnter={mouseHandler}
-            className={styles.image}
-            src={item.src}
-            alt="img"
-          />
-          <div className={styles.hover}></div>
-          <h1 className={styles.hoverTitle}>title of this image</h1>
-          <button className={styles.more}>more</button>
-        </section>
+      {projects.map((item) => (
+        <Link href={item.link ? item.link : "#"}>
+          <section key={item.id} className={styles.imageContainer}>
+            <img
+              onMouseEnter={mouseHandler}
+              className={styles.image}
+              src={item.image}
+              alt="img"
+            />
+            <div className={styles.hover}></div>
+            <h1 className={styles.hoverTitle}>{item.title}</h1>
+            <button className={styles.more}>more</button>
+          </section>
+        </Link>
       ))}
     </div>
   );

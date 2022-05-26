@@ -1,52 +1,33 @@
-import React from 'react'
-import Head from 'next/head'
+import React from "react";
+import Head from "next/head";
 
-import * as cookie from 'cookie'
-
+import * as cookie from "cookie";
 
 //import components
-import Details from "../../components/DBProducts/Details"
-import Layout from '../../components/Adviser/Layout'
-import { MainLink } from '../../components/BaseUrl/BaseUrl'
+import Details from "../../components/DBProducts/Details";
+import Layout from "../../components/Adviser/Layout";
+import { MainLink } from "../../components/BaseUrl/BaseUrl";
 
 //import modules
-import axios from 'axios'
+import axios from "axios";
 
-
-const details = ({productsList}) => {
+const details = ({ detailsData }) => {
   return (
     <Layout>
-        <Head>
-            <title>لیست محصولات</title>
-        </Head>
-        <Details productsList={productsList} />
+      <Head>
+        <title>لیست محصولات</title>
+      </Head>
+      <Details detailsData={detailsData} />
     </Layout>
-  )
+  );
+};
+
+export async function getServerSideProps(context) {
+  const { details } = context.query;
+
+  return {
+    props: { detailsData: details },
+  };
 }
 
-export async function getServerSideProps(context){
-    const {details} = context.query;
-    if (context.req.headers.cookie) {
-      const parsedCookies = cookie.parse(context.req.headers.cookie);
-      const productsList = await axios.get(encodeURI(`${MainLink}/products/rd/${details}/`),
-      {
-          headers:{
-            'Authorization': 'Token '+  parsedCookies.token, 
-          }
-      });
-    
-      const productsResponse = productsList.data;
-      return{
-        props:{productsList: productsResponse }
-      }
-    }else{
-      const productsList = await axios.get(encodeURI(`${MainLink}/products/rd/${details}/`));
-    
-      const productsResponse = productsList.data;
-      return{
-        props:{productsList: productsResponse }
-      }
-  }
-}
-
-export default details
+export default details;

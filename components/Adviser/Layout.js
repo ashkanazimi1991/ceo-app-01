@@ -9,6 +9,12 @@ const Layout = ({ children }) => (
         <meta name="description" content="نرم افزار" />
         <link rel="icon" href="/images/1.png" />
         <link rel='manifest' href='/manifest.json' />
+        <link
+            rel="stylesheet"
+            href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+            integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+            crossOrigin="anonymous"
+          />
       </Head>
     <header>
       <Menubar />

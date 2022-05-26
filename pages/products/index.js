@@ -11,44 +11,23 @@ import { MainLink } from "../../components/BaseUrl/BaseUrl";
 //import modules
 import axios from "axios";
 
-const index = ({ productsList }) => {
+const index = ({ slug }) => {
   return (
     <Layout>
       <Head>
         <title>لیست محصولات</title>
       </Head>
-      <DBProducts productsList={productsList} />
+      <DBProducts slug={slug} />
     </Layout>
   );
 };
 
 export async function getServerSideProps({ req, res, query }) {
   const { slug } = query;
-  const token = getCookie("token", { req, res });
-  console.log(token);
-  if (token) {
-    const productsList = await axios.get(
-      encodeURI(`${MainLink}/products/${slug}/`),
-      {
-        headers: {
-          Authorization: "Token " + token,
-        },
-      }
-    );
-    const productsResponse = productsList.data;
-    return {
-      props: { productsList: productsResponse },
-    };
-  } else {
-    const productsList = await axios.get(
-      encodeURI(`${MainLink}/products/${slug}/`)
-    );
 
-    const productsResponse = productsList.data;
-    return {
-      props: { productsList: productsResponse },
-    };
-  }
+  return {
+    props: { slug: slug },
+  };
 }
 
 export default index;
