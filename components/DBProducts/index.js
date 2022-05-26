@@ -71,7 +71,6 @@ const index = ({ slug }) => {
   }, [auth]);
 
   const likeHandler = async (id) => {
-    if (auth.id) {
       await axios
         .get(`${MainLink}/marks/ra/${id}/`, {
           headers: {
@@ -80,11 +79,10 @@ const index = ({ slug }) => {
         })
         .then((response) =>
           toast.success("محصول مورد نظر به لیست علاقه مندی افزوده شد")
-        );
-    } else {
-      toast.error("برای افزودن به لیست علاقه مندی ابتدا باید وارد شوید");
+        ).catch(error => {
+          toast.error("برای افزودن به لیست علاقه مندی ابتدا باید وارد شوید");
+        })
     }
-  };
   return (
     <Row
       style={{ width: "100%", margin: "5% 0px", direction: "rtl" }}

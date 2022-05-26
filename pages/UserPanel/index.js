@@ -40,12 +40,12 @@ export default function Home(props) {
             <tbody>
               {props.productsList.map(item =>
                 <tr key={item.id} className={styles.Tbody}>
-                  <td>{shamsi.gregorianToJalali(item.created.split("-")).join("-")}</td>
+                  <td>{shamsi.gregorianToJalali(item.payment_date.split("-")).join("-")}</td>
                   {item.payment_status === 'p' && <td style={{ color: 'green' }}>پرداخت موفق</td>}
                   {item.payment_status === 'c' && <td style={{ color: 'red' }}>کنسل شده</td>}
                   {item.payment_status === 'r' && <td style={{ color: 'yellow' }}>مرجوعی</td>}
                   {item.confirmation ? <td style={{ color: 'green' }}>تایید شده</td> : <td style={{ color: 'red' }}>در حال پردازش</td>}
-                  <td>{item.amount}</td>
+                  <td>{item.total_price}</td>
                   <td><Link href={`/Orders/${item.order_id}`}>جزئیات</Link></td>
                 </tr>
               )}
