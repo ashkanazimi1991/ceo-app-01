@@ -4,7 +4,8 @@ import styles from "../Orders/Details.module.css"
 import Navbar from '../Navbar/index'
 import SideBar from '../SideBar/Index'
 import * as cookie from 'cookie'
-import { MainLink } from '../../components/baseUrl/BaseUrl'
+// import { MainLink } from '../../components/baseUrl/BaseUrl'
+import {MainLink} from '../../components/BaseUrl/BaseUrl'
 
 
 // export const getStaticPaths = async () => {
