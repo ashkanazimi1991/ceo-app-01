@@ -38,7 +38,6 @@ export const ServicesWrapper = styled.div`
   max-width: 100%;
   margin: 0 auto;
   display: grid;
-
   grid-template-columns:  1fr 1fr 1fr;
   align-items: center;
   grid-gap: 60px;

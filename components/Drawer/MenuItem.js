@@ -27,16 +27,16 @@ const MenuItem = (props) => {
               switch (name) {
                 case "اخبار":
                   return <BiPlanet id="drawer-icon" />;
-                case "WEB Service":
-                  return <BiPlanet id="drawer-icon" />;
-                case "I O T":
-                  return <BiBroadcast id="drawer-icon" />;
-                case "Robotic Automaiton":
-                  return <BiChip id="drawer-icon" />;
-                case "Artificial Intelligence":
-                  return <BiBrain id="drawer-icon" />;
-                case "Crypto Currency":
-                  return <BiDollarCircle id="drawer-icon" />;
+                // case "WEB Service":
+                //   return <BiPlanet id="drawer-icon" />;
+                // case "I O T":
+                //   return <BiBroadcast id="drawer-icon" />;
+                // case "Robotic Automaiton":
+                //   return <BiChip id="drawer-icon" />;
+                // case "Artificial Intelligence":
+                //   return <BiBrain id="drawer-icon" />;
+                // case "Crypto Currency":
+                //   return <BiDollarCircle id="drawer-icon" />;
               }
             })()}
           </div>
@@ -53,10 +53,11 @@ const MenuItem = (props) => {
         <ul className={`sub-menu ${expand ? "active" : ""}`}>
           {number ?
             <Link href={`/${to}`}>
-              {<h1 className="link-name">{name}</h1>}
+              {<h1 className="link-name"> {name}</h1>}
+              
             </Link> :
             <Link href={`/products/?slug=${to}`}>
-              {<h1 className="link-name"> {name}</h1>}
+              {<h1 className="link-name"><BiPlanet id="drawer-icon" /> {name}</h1>}
             </Link>
           }
           {subMenus.map((menu, index) => (

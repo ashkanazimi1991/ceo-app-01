@@ -31,7 +31,7 @@ const Navbar = ({toggle}) => {
         <Nav scrollNav={scrollNav}>
             <NavbarContainer>
                 {/* <NavBtn>
-                    <Link href='/login'>{<NavBtnLink > ثبت نام / ورود </NavBtnLink>}</Link>
+                    <Link href='/login'>{<NavBtnLink > پنل کاربری </NavBtnLink>}</Link>
                 </NavBtn> */}
                 
                 

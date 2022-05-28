@@ -129,6 +129,8 @@ export const Subtitle = styled.p`
     color: ${({darkText}) => (darkText ? '#000' : '#fff')};
     padding-bottom: 20px;
     padding-top: 20px;
+    direction: rtl;
+    text-align: justify;
 
     @media screen and (max-width: 480px) {
         margin: 0px;

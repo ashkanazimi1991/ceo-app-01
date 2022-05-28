@@ -2,7 +2,6 @@ import { Col, Row ,Card , Skeleton , Divider , Avatar} from 'antd'
 import { UserOutlined } from '@ant-design/icons';
 import React,{useState , useEffect} from 'react'
 import {  descreption } from '../function/splitText';
-import {ShoppingOutlined , MenuOutlined ,HeartOutlined} from '@ant-design/icons';
 import Link from 'next/link';
 const { Meta } = Card;
 import * as shamsi from 'shamsi-date-converter';
@@ -39,7 +38,7 @@ export const MainNews = ({newsList}) => {
                         <section style={{marginTop: '10%' , paddingLeft: '20px'}}>
                            <section style={{display: 'flex' , justifyContent: 'flex-start' , alignItems: 'center'}}>
                             <Avatar size="small" icon={<UserOutlined />} />
-                            <p style={{margin: '0px' , paddingLeft: '10px' , color: '#7f7f7f'}}>{item.author.first_name} {item.author.last_name}</p>
+                            <p style={{margin: '0px' , paddingLeft: '10px' , color: '#ff0000'}}>{item.author.first_name} {item.author.last_name}</p>
                            </section>
                            <p style={{marginTop: '10px' , color: '#7f7f7f'}}>{shamsi.gregorianToJalali(item.created_at.split("-")).join("-")}</p>
                         </section>

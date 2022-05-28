@@ -52,11 +52,11 @@ export const NavLogo = styled.div`
     text-shadow: 2px 2px #000;
     text-decoration: none;
     @media screen And (max-width: 768px) {
-        margin-right: 75%;  
+        margin-right: 70%;  
         font-size: 20px;
 
     }
-    @media screen and (max-width:480px) {
+    @media screen and (max-width:550px) {
         margin-right: 65%;
         font-size: 16px;
     } 
@@ -130,38 +130,38 @@ export const NavLinks = styled(LinkS)`
     }
 `;
 
-export const NavBtn = styled.nav`
-    display: flex;
-    align-items: center;
+// export const NavBtn = styled.nav`
+//     display: flex;
+//     align-items: center;
 
-    @media screen and (max-width: 768px) {
-        display: none;
-    }
-`;
+//     @media screen and (max-width: 768px) {
+//         display: none;
+//     }
+// `;
 
-export const NavBtnLink = styled.div`
-    border-radius: 10px;
-    background:  	rgba(179,0,0,1);
-    white-space: nowrap;
-    padding: 9px 20px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    color: #fff;
-    font-size: 12px;
-    font-family: iransans;
-    outline: none;
-    border: none;
-    cursor: pointer;
-    transition: all 0.2s ease-in-out;
-    text-decoration: none;
-    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+// export const NavBtnLink = styled.div`
+//     /* border-radius: 10px; */
+//     /* background:  	rgba(179,0,0,1); */
+//     white-space: nowrap;
+//     padding: 9px 20px;
+//     margin-top: 10px;
+//     margin-bottom: 10px;
+//     color: #09d3d5;
+//     font-size: 16px;
+//     font-family: iransans;
+//     outline: none;
+//     border: none;
+//     cursor: pointer;
+//     transition: all 0.2s ease-in-out;
+//     text-decoration: none;
+//     /* box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset; */
 
-    &:hover {
-        transition: all 0.2s ease-in-out;
-        background: #09d3d5;
-        color: #000;
-        font-weight: bolder;
-    }
+//     &:hover {
+//         transition: all 0.2s ease-in-out;
+//         background: #09d3d5;
+//         color: #000;
+//         font-weight: bolder;
+//     }
 
-`;
+// `;
 

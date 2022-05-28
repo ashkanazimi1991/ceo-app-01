@@ -3,19 +3,18 @@ import { Card, Col, Divider, Row } from 'antd';
 import Link from 'next/link'
 const { Meta } = Card;
 import { descreption } from '../function/splitText';
+import styles from "./news.module.css"
 
 const News = ({news}) => (
-  <Row dir="rtl" style={{ margin: '2% auto' , maxWidth: '80%' }} >
+  <Row className={styles.row}   >
     {news.map((item, index) => (
       <Col dir="rtl"  xl={8} md={12} sm={24}>
-        <Card
-          key={item.id}
-          hoverable
-          style={{ width: 240 , minHeight: '420px' , borderRadius: '8px' , margin: '0 auto' }}
-          cover={<img alt="example" src={item.title_image} style={{width: '100%' , height: 'auto' , overflow: 'hidden'}} />}
+        <Card className={styles.card}
+          key={item.id}hoverable
+          cover={<img className={styles.img} alt="مدیریت آنلاین" src={item.title_image}  />}
         >
-          <Meta title={<Divider>{item.title}</Divider>} description={`${descreption(item.body)} ${'...'} `} />
-          <Link href={`/news/${item.id}`}><p dir='rtl' style={{textAlign: 'right' , marginTop: '20px' , color: '#3498DB'}}>ادامه مطلب</p></Link>
+          <Meta title={<Divider>{item.title}</Divider>} description={`${descreption(item.body)} ${'...'} `} className={styles.title} />
+          <Link href={`/news/${item.id}`}><p className={styles.p}>ادامه مطلب</p></Link>
         </Card>
       </Col>
     ))}
@@ -23,3 +22,8 @@ const News = ({news}) => (
 );
 
 export default News;
+
+// style={{ padding: '2% '  ,backgroundColor:'#045256' }}
+// style={{ width: 290 , minHeight: '420px' , borderRadius: '10px' , margin: 'auto', marginTop:'20px', marginBottom:'20px' }}
+// style={{width: '100%' , height: 'auto' , overflow: 'hidden'}}
+// dir='rtl' style={{textAlign: 'right' , marginTop: '20px' , color: '#3498DB'}}
