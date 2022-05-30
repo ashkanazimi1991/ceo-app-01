@@ -31,7 +31,7 @@ const PaySide = () => {
   }, [])
 
   const paymentHandler = (price) => {
-    fetch(`http://45.159.113.83:801/goto_gateway/`, {
+    fetch(`https://onlineceobackendapi.onlineceo.org/goto_gateway/`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
