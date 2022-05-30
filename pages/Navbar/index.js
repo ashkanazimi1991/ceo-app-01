@@ -13,13 +13,13 @@ export default function Navbar() {
         <div className={styles.navbarDive}>
         <nav className="navbar navbar-light bg-light fixed-top">
             <div style={{direction: 'ltr'}} className="container-fluid">
-                <Link className="navbar-brand" href="/"><h3 style={{color: 'white'}}>VetNow</h3></Link>
+                <Link className="navbar-brand" href="/"><h3 style={{color: 'white'}}>ONLINE CEO</h3></Link>
                 <button className={styles.navbar_toggler} type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
                 <span><i className="fas fa-2x fa-bars"></i></span>
                 </button>
                 <div className="offcanvas offcanvas-end" tabIndex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
                 <div style={{backgroundColor: '#232F3E'}} className="offcanvas-header">
-                    <Link href="/"><h5 style={{color: "#fff"}} className="offcanvas-title" id="offcanvasNavbarLabel">VetNow</h5></Link>
+                    <Link href="/"><h5 style={{color: "#fff"}} className="offcanvas-title" id="offcanvasNavbarLabel">ONLINE CEO</h5></Link>
                     <button style={{backgroundColor: '#fff'}} type="button" className="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                 </div>
                 <div style={{textAlign: 'right'}} className="offcanvas-body">

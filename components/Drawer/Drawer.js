@@ -1,4 +1,5 @@
 import { BiLogOutCircle, BiBody } from "react-icons/bi";
+import { FaUserCog } from 'react-icons/fa';
 import React, { useEffect, useRef, useState , useContext } from "react";
 import MenuItem from "./MenuItem";
 import { MainLink } from "../BaseUrl/BaseUrl";
@@ -89,11 +90,15 @@ function Drawer() {
           </div>
 
           <div className="name-job">
+          <Link href={'/Profile'} >
             <div className="profile-name"> حساب کاربری </div>
-            <div className="job">تنظیمات داشبورد</div>
+          </Link>
+            <Link href={'/Profile'} >
+              <div className="job">تنظیمات داشبورد</div>
+            </Link>
           </div>
           <div className="profile-logo" >
-           <Link href={'/Profile'} ><BiLogOutCircle /></Link>
+           <Link href={'/Profile'} ><FaUserCog /></Link>
           </div>
         </div>
       </div>

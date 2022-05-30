@@ -20,7 +20,7 @@ const Sidebar = ({isOpen, toggle}) => {
                     <SidebarLink to='crypto'  onClick={toggle}>کریپتو و بلاک چین</SidebarLink>
                 </SidebarMenu>
                 <SideBtnWrap>
-                    <Link href='login'>{<SidebarRoute>ثبت نام /  ورود</SidebarRoute>}</Link>
+                    <Link href='auth/login'>{<SidebarRoute>ثبت نام /  ورود</SidebarRoute>}</Link>
                 </SideBtnWrap>
                 
             </SidebarWrapper>

@@ -3,14 +3,15 @@
     border-radius: 5px;
     padding: 5px 8px 5px 8px;
     color: white;
-    background-color: #232F3E!important;
+    background: linear-gradient(450deg, #045256, #142028);
     display: none;
 }
 .navbarDive nav{
-    background-color: #232F3E!important;
+    background: linear-gradient(450deg, #045256, #142028);
     position: static;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
+
 .container{
     background-color: #ffffff;
     text-align: right;
@@ -39,8 +40,8 @@
 .ListItem p {
     font-size: 18px;
     direction: ltr;
-
-  }
+    
+}
 .ListItem i:nth-child(2){
     display: none;
 }
@@ -50,7 +51,7 @@
 .ListItem:active{
     font-size: 15px;
 }
-   
+
 @media only screen and (max-width: 991.98px) {
     .navbar_toggler{
         display: block;

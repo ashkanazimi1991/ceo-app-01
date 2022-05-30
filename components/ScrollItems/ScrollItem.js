@@ -21,7 +21,7 @@ const ScrollItem = ({ projects }) => {
             />
             <div className={styles.hover}></div>
             <h1 className={styles.hoverTitle}>{item.title}</h1>
-            <button className={styles.more}>more</button>
+            <button className={styles.more}>Pyhton-javaScript / React-Next-Native</button>
           </section>
         </Link>
       ))}

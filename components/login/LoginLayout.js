@@ -53,7 +53,7 @@ const LoginLayout = ({children}) => {
                     <a href="#">Terms</a>
                     </li>
                 </ul>
-                <p className="footer-text text-center">copyright © 2018 Bootstrapdash. All rights reserved.</p>
+                <p className="footer-text text-center">copyright © 2018 ONLINE CEO. All rights reserved.</p>
                 </div>
             </div>
             </div>

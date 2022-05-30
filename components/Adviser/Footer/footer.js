@@ -56,7 +56,7 @@ const Footer = () => {
         <h1 style={{color:"#7F8487",fontSize:"14px"}}>
         Iran - urmia - sheykhtape - N10  
         </h1>
-        <h1 style={{color:"#7F8487",fontSize:"14px"}}>Tell : 33384232 -- 044</h1>
+        <h1 style={{color:"#7F8487",fontSize:"14px"}}>Tell : 04433384232 </h1>
       </div>
       <div className={styles.bottomLogo}>
         <Link href="/" passHref>
@@ -69,7 +69,7 @@ const Footer = () => {
         <div className={styles["fotterLogo"]}>
           {/* <div className={styles.otherlogo}><FaFacebook id={styles.facebook} /></div> */}
           <div className={styles.otherlogo}>
-            <a href="" target="_blank" rel="noreferrer">
+            <a href="https://www.instagram.com/onlineceoofficial" target="instagram" rel="noreferrer">
               <FaInstagram id={styles.instagram} />
             </a>
           </div>
@@ -81,7 +81,7 @@ const Footer = () => {
           <div className={styles.otherlogo}>
             <a
               href="https:/wa.me/989333936405"
-              target="_blank"
+              target="whatsapp"
               rel="noreferrer"
             >
               <FaWhatsapp id={styles.whatsapp} />

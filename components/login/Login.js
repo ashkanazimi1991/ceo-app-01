@@ -55,7 +55,7 @@ const Login = () => {
             <div className="form-group">
                 <label className="label">شماره تلفن همراه</label>
                 <div className="input-group">
-                <input type="text" className={`form-control ${styles.phone_number}`} placeholder="شماره تلفن همراه" onChange={numberHandler} />
+                <input type="text" className={`form-control ${styles.phone_number}`} placeholder="مثال (09141472686)" onChange={numberHandler} />
                 </div>
             </div>
             <div className="form-group">
@@ -63,7 +63,7 @@ const Login = () => {
             </div>
             <div className="form-group">
                 <button className="btn btn-block g-login">
-                <img className="mr-3" src="/assets/images/file-icons/icon-google.svg" alt="" />Log in with Email</button>
+                <img className="mr-3" src="/assets/images/file-icons/icon-google.svg" alt="" /> ورود با ایمیل</button>
             </div>
             <div className="text-block text-center my-3">
                 <span className="text-small font-weight-semibold">اکانت ندارید ؟ </span>

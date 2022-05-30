@@ -1,4 +1,9 @@
-import { BiBroadcast, BiBrain, BiPlanet, BiArrowFromTop, BiDollarCircle, BiChip } from "react-icons/bi";
+import { BiBitcoin, BiArrowFromTop, BiDollarCircle, BiChip } from "react-icons/bi";
+import { MdPhonelink, MdPhonelinkSetup} from "react-icons/md";
+
+import {GiRobotGrab } from "react-icons/gi";
+import {GoRadioTower } from "react-icons/go";
+
 import React, { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 
@@ -25,18 +30,18 @@ const MenuItem = (props) => {
           <div className="sidebar-logo">
             {(() => {
               switch (name) {
-                case "اخبار":
-                  return <BiPlanet id="drawer-icon" />;
-                // case "WEB Service":
-                //   return <BiPlanet id="drawer-icon" />;
-                // case "I O T":
-                //   return <BiBroadcast id="drawer-icon" />;
-                // case "Robotic Automaiton":
-                //   return <BiChip id="drawer-icon" />;
+                case "ثبت سفارش برای پلتفرم های تحت وب":
+                  return <MdPhonelink  id="drawer-icon" />;
+                case "ثبت سفارش برای  نرم افرارهای تخصصی":
+                  return <MdPhonelinkSetup id="drawer-icon" />;
+                case "رباتیک":
+                  return <GiRobotGrab id="drawer-icon" />;
+                case "اینترنت  اشیا":
+                  return <GoRadioTower id="drawer-icon" />;
                 // case "Artificial Intelligence":
                 //   return <BiBrain id="drawer-icon" />;
-                // case "Crypto Currency":
-                //   return <BiDollarCircle id="drawer-icon" />;
+                case "رمز ارز":
+                  return <BiBitcoin id="drawer-icon" />;
               }
             })()}
           </div>
@@ -57,7 +62,7 @@ const MenuItem = (props) => {
               
             </Link> :
             <Link href={`/products/?slug=${to}`}>
-              {<h1 className="link-name"><BiPlanet id="drawer-icon" /> {name}</h1>}
+              {<h1 className="link-name"> {name}</h1>}
             </Link>
           }
           {subMenus.map((menu, index) => (

@@ -14,7 +14,7 @@ const News = ({news}) => (
           cover={<img className={styles.img} alt="مدیریت آنلاین" src={item.title_image}  />}
         >
           <Meta title={<Divider>{item.title}</Divider>} description={`${descreption(item.body)} ${'...'} `} className={styles.title} />
-          <Link href={`/news/${item.id}`}><p className={styles.p}>ادامه مطلب</p></Link>
+          <Link href={`/news/${item.id}`}><p className={styles.p}>ادامه خبر</p></Link>
         </Card>
       </Col>
     ))}

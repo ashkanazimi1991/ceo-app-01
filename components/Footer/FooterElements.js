@@ -142,6 +142,11 @@ export const SocialIcons = styled.div`
     justify-content: space-between;
     align-items: center;
     width: 240px;
+    padding-right: 60px;
+    @media screen and (max-width: 820px) {
+        padding-right: 0px;
+       
+    }
    
 `;
 

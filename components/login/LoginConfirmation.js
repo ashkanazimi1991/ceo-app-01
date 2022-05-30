@@ -62,7 +62,7 @@ const LoginConfirmation = () => {
                 <h1>ورود / ثبت نام</h1>
                 <hr />
                 <h6>
-        لطفا کد پیامک شده به تلفنتان را وارد کنید                           
+        لطفا کد پیامک شده را وارد کنید                           
                 </h6>
             </div>
             <div className="form-group">
@@ -76,7 +76,7 @@ const LoginConfirmation = () => {
             </div>
             <div className="form-group">
                 <button className="btn btn-block g-login">
-                <img className="mr-3" src="/assets/images/file-icons/icon-google.svg" alt="" />Log in with Email</button>
+                <img className="mr-3" src="/assets/images/file-icons/icon-google.svg" alt="" />ثبت نام با ایمیل</button>
             </div>
             <div className="text-block text-center my-3">
                 <span className="text-small font-weight-semibold">اکانت ندارید ؟ </span>

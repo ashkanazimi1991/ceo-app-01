@@ -37,7 +37,7 @@ function ErrorPage() {
           </div>
         </div>
       </div>
-      <Link href='/'><button>Go To Home</button></Link>
+      <Link href='/auth/login'><button>برای دسترسی کامل از اینجا ثبت نام کنید</button></Link>
     </div>
   );
 }
