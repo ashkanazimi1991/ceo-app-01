@@ -43,7 +43,7 @@ export const MainNews = ({newsList}) => {
                            <p style={{marginTop: '10px' , color: '#7f7f7f'}}>{shamsi.gregorianToJalali(item.created_at.split("-")).join("-")}</p>
                         </section>
                         <section dir='rtl' style={{paddingLeft: '20px'}}>
-                            <Link href={`/news/${item.id}`}>ادامه مطلب</Link>
+                            <Link href={`/news/${item.id}`} >ادامه مطلب</Link>
                         </section>
                     </Skeleton>
                 </Card>

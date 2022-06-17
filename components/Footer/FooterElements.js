@@ -22,9 +22,9 @@ export const FooterLinkContainer = styled.div`
     display: grid;
     justify-content: center;
 
-    @media screen and (max-width: 820px) {
+    /* @media screen and (max-width: 670px) {
         flex-direction: column;
-    }
+    } */
 `;
 
 
@@ -32,10 +32,10 @@ export const FooterLinkWrapper = styled.div`
     display: flex;
    
 
-    @media screen and (max-width: 820px) {
+    /* @media screen and (max-width: 820px) {
         flex-direction: row-reverse;
-    }
-    @media screen and (max-width: 628px) {
+    } */
+    @media screen and (max-width: 670px) {
         flex-direction: column;
     }
 `;
@@ -45,8 +45,8 @@ export const FooterLinkItems = styled.div`
     flex-direction: column;
     align-items: right;
     font-size: 12px;
-    margin: 16px;
-    width: 160px;
+    /* margin: 1px; */
+    /* width: 10px; */
     box-sizing: border-box;
     
     
@@ -54,7 +54,7 @@ export const FooterLinkItems = styled.div`
 
     @media screen and (max-width: 7680px) {
         margin: 0;
-        padding: 10px;
+        /* padding: 10px; */
         width: 100%;
     }
 `;

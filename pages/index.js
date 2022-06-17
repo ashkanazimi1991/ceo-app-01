@@ -9,11 +9,17 @@ import Service2 from '../components/Services2/Service2';
 import Footer from '../components/Footer/Footer';
 import SliderOne from "../components/cardslider/sliderone";
 import World from '../components/worldMap/world';
-import Own from '../components/ownSlider/own'
+import Banner from '../components/Banner/Banner';
+import Header from '../components/Header/Header'
 import Head from 'next/head'
 import News from '../components/news/News';
 import axios from 'axios';
 import { MainLink } from '../components/BaseUrl/BaseUrl';
+import Promo from '../components/Promo/Promo';
+
+
+
+
 
 export default function Home({news}) {
   const [isOpen, setIsOpen] = useState(false);
@@ -25,22 +31,27 @@ export default function Home({news}) {
   return (
     <div>
       <Head>
+        <title>Home - ONLINE CEO</title>
         <meta name="description" content="مدیریت آنلاین" />
         <link rel="icon" href="/images/1.png" />
         <link rel='manifest' href='/manifest.json' />
       </Head>
 
+     <Navbar toggle={toggle}/>
+     {/* <Header/> */}
+   
+        <Promo/>
+      {/* <Banner/> */}
       <Drawer/>
       <Sidebar isOpen={isOpen} toggle={toggle} />
-      <Navbar toggle={toggle}/>
-      <Own/>
+      {/* <Own/> */}
             
-      <div style={{width: "100%", height: "100%" , backgroundColor: '#045256',overflow: 'hidden'}}>
-        <SliderOne  style={{width: "100%"}} 
+      {/* <div style> */}
+        <SliderOne   
           img1='/images/js.png' img2='/images/python.png' img3='/images/c++.png' img4='/images/go.png' img5='/images/swift.png' img6='/images/ruby.png'
           title1='Java Script' title2='Python' title3='C++' title4='Go' title5='Swift' title6='Ruby'
-        />
-      </div>
+          />
+      {/* </div> */}
       <InfoSection {...homeObjectOne} />
       <Service2/>
       <InfoSection {...homeObjectTwo} />

@@ -1,6 +1,6 @@
 import Layout from "../../components/Adviser/Layout";
 import styles from "../../styles/Advisor.module.css";
-import Own from "../../components/ownSlider/own";
+// import Own from "../../components/ownSlider/own";
 // import AdvisorPic from "../../components/Adviser/advisorPic";
 // import Pic from "../../components/automation/pic";
 const Automation = () => (
@@ -8,7 +8,7 @@ const Automation = () => (
     {/* ######################################################Video Section */}
     <div className={styles.videoPlace}>
       <div className={styles.video}>
-        <Own img1="images/1m.jpg" img2="images/office01.jpg" img3="images/office02.jpg" img4="images/office03.jpg" img5="images/office04.jpg" img6="images/unlimt.gif" />
+        {/* <Own img1="images/1m.jpg" img2="images/office01.jpg" img3="images/office02.jpg" img4="images/office03.jpg" img5="images/office04.jpg" img6="images/unlimt.gif" /> */}
         {/* <AdvisorPic/> */}
         {/* <img src="/images/advisorPic/automation.svg" alt="" /> */}
         {/* <Pic className={styles.automation}/> */}

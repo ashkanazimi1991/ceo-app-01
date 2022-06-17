@@ -17,7 +17,8 @@ export const Nav = styled.nav`
     top: 0px;
     z-index: 10;
     /* box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px; */
-    background-color: transparent;
+     background: linear-gradient(450deg, #000, #142028);
+
     @media screen and (max-width: 960px) {
         transition: 0.8s all ease;
         font-size: 10px;
@@ -27,7 +28,8 @@ export const Nav = styled.nav`
 
 export const NavbarContainer = styled.div`
     display: flex;
-    background: linear-gradient(450deg, #045256, #142028);
+    /* background: linear-gradient(450deg, #045256, #142028); */
+    background-color: transparent;
     justify-content: space-between;
     height: 80px;
     width: 100%;

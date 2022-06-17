@@ -1,6 +1,6 @@
 import Layout from "../../components/Adviser/Layout";
 import styles from "../../styles/Advisor.module.css";
-import Own from "../../components/ownSlider/own";
+// import Own from "../../components/ownSlider/own";
 // import AdvisorPic from "../../components/Adviser/advisorPic";
 // import Pic from "../../components/automation/pic";
 const seo = () => (
@@ -8,7 +8,7 @@ const seo = () => (
     {/* ######################################################Video Section */}
     <div className={styles.videoPlace}>
       <div className={styles.video}>
-        <Own img1="/images/seo220.jpg" objectFit1="contain" img2="/images/google01.gif" objectFit2="contain" img3="/images/" objectFit3="cover" img4="/images/seo200.jpg" objectFit4="co" img5="/images/528.jpg" objectFit5="cover" img6="/images/scan200.gif" objectFit6="contain" bgColor="#000" bg1Color="#f7f8fa" bg2Color="#fff" bg3Color="" bg4Color="#000" bg5Color="" bg6Color="#fff"/>
+        {/* <Own img1="/images/seo220.jpg" objectFit1="contain" img2="/images/google01.gif" objectFit2="contain" img3="/images/" objectFit3="cover" img4="/images/seo200.jpg" objectFit4="co" img5="/images/528.jpg" objectFit5="cover" img6="/images/scan200.gif" objectFit6="contain" bgColor="#000" bg1Color="#f7f8fa" bg2Color="#fff" bg3Color="" bg4Color="#000" bg5Color="" bg6Color="#fff"/> */}
         {/* <AdvisorPic/> */}
         {/* <img src="/images/advisorPic/automation.svg" alt="" /> */}
         {/* <Pic className={styles.automation}/> */}

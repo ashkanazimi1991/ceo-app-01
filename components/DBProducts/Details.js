@@ -104,13 +104,13 @@ export default function Details({ detailsData }) {
       {dataDetails.manufacturer_company}
     </p>,
     <p>
-      <i className="fas fa-badge-percent"></i> گارانتی اصالت و سلامت فیزیکی کالا
+      <i className="fas fa-badge-percent"></i> تضمین خدمات با پشتیبانی 7/24
     </p>,
     <a href={dataDetails.pdf_file}>
-      <i className="fas fa-file-alt"></i> دانلود فایل pdf
+      <i className="fas fa-file-alt"></i> دانلود ریز مشخصات 
     </a>,
     <p>
-      <i className="fas fa-calculator-alt"></i> تعداد موجود در انبار :{" "}
+      <i className="fas fa-calculator-alt"></i> تعداد قابل سفارش :{" "}
       {dataDetails.repository_quantity}
     </p>,
     <p>

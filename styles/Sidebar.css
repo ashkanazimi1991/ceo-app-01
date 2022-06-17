@@ -17,17 +17,17 @@
   direction: rtl;
   transition: all 0.4s ease-in-out;
   position: fixed;
-  top: 0;
+  top: 20px;
   background-size: cover;
   right: -10px;
   height: 100vh;
   width: 100%;
   /* background: #045256;
    */
-   background: linear-gradient(5deg, #045256,  #142028);
+   /* background: linear-gradient(5deg, #045256,  #142028); */
   border-radius: 10px 0 0 10px;
-  box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px,
-    rgba(0, 0, 0, 0.22) 0px 10px 10px;
+  /* box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, */
+    /* rgba(0, 0, 0, 0.22) 0px 10px 10px; */
 }
 
 
@@ -52,7 +52,7 @@
 
 .sidebar .logo-details {
   height: 60px;
-  padding-top: 40px;
+  padding-top: 0px;
   width: 100%;
   padding-right: 30px;
   color: #d12727;
@@ -81,7 +81,7 @@
 }
 
 .sidebar .logo-details .logo-name {
-  color: rgb(50, 214, 255);
+  color: rgb(84, 255, 50);
   /* background-color: #b30000; */
   font-size: 14px;
   overflow: hidden;
@@ -91,10 +91,11 @@
   /* padding-top: 70px; */
 }
 .sidebar .nav-links {
-  height: 400px;
+  height: 100%;
   padding-top: 20px;
   /* overflow-y: auto; */
   padding-bottom: 20px;
+  padding-right: 30px;
 }
 .sidebar .nav-links li {
   position: relative;
@@ -103,7 +104,7 @@
 }
 .sidebar .nav-links li:hover {
   background: #00000069;
-  background-color: #b30000;
+  /* background-color: #142028; */
   border-radius: 10px;
 }
 .sidebar .nav-links li .icon-link {
@@ -157,13 +158,14 @@
 
 .sidebar .nav-links li .sub-menu a {
   /* background-color: #b30000; */
-  color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
   margin-top: 10px;
-  background-color: rgb(255, 255, 255);
+  background: linear-gradient(450deg, #000, #142028);
   box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
   font-size: 12px;
-  border-radius: 10px;
-  font-weight: 700;
+  border-radius: 15px;
+  /* font-weight: 700; */
+  text-shadow: 1px 1px 1px rgb(0, 0, 0);
   padding: 5px 70px;
   justify-content: center;
   white-space: nowrap;
@@ -173,8 +175,10 @@
 }
 .sidebar .nav-links li .sub-menu a:hover {
   color: rgb(255, 255, 255);
-  transform: scale(1.1);
-  background-color: #b30000;
+  transform: scale(1.09);
+  border-radius: 15px;
+  text-shadow: 2px 2px #000;
+  background: linear-gradient(450deg, rgb(22, 224, 231), #142028);
 }
 .sidebar .nav-links li .sub-menu {
   transition: all 0.3s ease-in-out;
@@ -242,17 +246,18 @@
 /* ########################## Profile Link ##################### */
 .sidebar .profile-details {
   position: absolute;
-  bottom: 0;
+  bottom: 20px;
   margin: 0;
-  background: #142028;
+  /* background: #142028; */
   transition: all 0.4s ease-in-out;
   display: flex;
   width:350px;
   height: 70px;
   align-items: center;
-  border-radius: 0 0 0 50px;
+  border-radius: 10px;
   overflow: hidden;
   justify-content: space-between;
+  background-color: #000;
 }
 .sidebar .profile-details img {
   height: 52px;

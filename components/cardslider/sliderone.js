@@ -45,9 +45,9 @@ export default class SliderOne extends Component {
       ],
     };
     return (
-      <div style={ {background: ""}}>
+      <div className={styles.container}>
         <Slider {...settings}>
-          <div>
+          <div >
             <div className={styles.card}>
               <img src={this.props.img1} alt=" مدیریت آنلاین" />
             </div>

@@ -1,33 +1,15 @@
 import React, { useState, useEffect, useContext } from "react";
 import Link from "next/link";
 import { getCookies, setCookies, removeCookies } from "cookies-next";
-
 import { AuthContext } from "../context/AuthContextProvider";
 import { TokenContext } from "../context/TokenContextProvider";
-
 import { descreption } from "../function/splitText";
-
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-
-//redux
 import { useSelector, useDispatch } from "react-redux";
-import {
-  addItem,
-  removeItem,
-  increase,
-  decrease,
-} from "../../components/redux/Cart/CartActions";
-
-//import antd
+import {  addItem,  removeItem,  increase,  decrease} from "../../components/redux/Cart/CartActions";
 import { Card, Row, Col, Skeleton, Divider } from "antd";
-import {
-  EditOutlined,
-  EllipsisOutlined,
-  ShoppingOutlined,
-  MenuOutlined,
-  HeartOutlined,
-} from "@ant-design/icons";
+import {  EditOutlined,  EllipsisOutlined,  ShoppingOutlined,  MenuOutlined,  HeartOutlined,} from "@ant-design/icons";
 import axios from "axios";
 import { MainLink } from "../BaseUrl/BaseUrl";
 const { Meta } = Card;
@@ -46,6 +28,7 @@ const index = ({ slug }) => {
     if (token) {
       await axios
         .get(encodeURI(`${MainLink}/products/${slug}/`), {
+          
           headers: {
             Authorization: "Token " + token,
           },
@@ -65,6 +48,12 @@ const index = ({ slug }) => {
         .get(encodeURI(`${MainLink}/products/${slug}/`))
         .then((response) => setData(response.data));
     }
+
+ 
+
+
+
+
     setTimeout(() => {
       setLoading(false);
     }, 1000);
@@ -83,6 +72,10 @@ const index = ({ slug }) => {
           toast.error("برای افزودن به لیست علاقه مندی ابتدا باید وارد شوید");
         })
     }
+
+
+
+
   return (
     <Row
       style={{ width: "100%", margin: "5% 0px", direction: "rtl" }}

@@ -1,6 +1,6 @@
 import Layout from "../../components/Adviser/Layout";
 import styles from "../../styles/Advisor.module.css";
-import Own from "../../components/ownSlider/own";
+// import Own from "../../components/ownSlider/own";
 // import AdvisorPic from "../../components/Adviser/advisorPic";
 // import Pic from "../../components/automation/pic";
 const security = () => (
@@ -8,7 +8,7 @@ const security = () => (
     {/* ######################################################Video Section */}
     <div className={styles.videoPlace}>
       <div className={styles.video}>
-        <Own img1="/images/apps013.jpg" objectFit1="cover" img2="/images/cyber014.gif" objectFit2="contain" img3="/images/" objectFit3="cover" img4="/images/card010.jpg" objectFit4="co" img5="/images/password.gif" objectFit5="cover" img6="/images/cyber016.gif" objectFit6="contain" bgColor="#000" bg1Color="#000" bg2Color="#000" bg3Color="" bg4Color="#000" bg5Color="" bg6Color="#000"/>
+        {/* <Own img1="/images/apps013.jpg" objectFit1="cover" img2="/images/cyber014.gif" objectFit2="contain" img3="/images/" objectFit3="cover" img4="/images/card010.jpg" objectFit4="co" img5="/images/password.gif" objectFit5="cover" img6="/images/cyber016.gif" objectFit6="contain" bgColor="#000" bg1Color="#000" bg2Color="#000" bg3Color="" bg4Color="#000" bg5Color="" bg6Color="#000"/> */}
         {/* <AdvisorPic/> */}
         {/* <img src="/images/advisorPic/automation.svg" alt="" /> */}
         {/* <Pic className={styles.automation}/> */}

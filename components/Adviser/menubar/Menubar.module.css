@@ -4,7 +4,7 @@
   display: flex;
   justify-content: space-around;
   z-index:10;
-  background: linear-gradient(450deg, #045256, #142028);
+  background: linear-gradient(450deg, #000, #142028);
   box-shadow: rgba(0, 0, 0, 0.4) 0px 30px 30px;
   
 }
