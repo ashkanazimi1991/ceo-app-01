@@ -1,5 +1,6 @@
 import Layout from "../../components/Adviser/Layout";
 import styles from "../../styles/Advisor.module.css";
+import Link from "next/link";
 // import Own from "../../components/ownSlider/own";
 // import AdvisorPic from "../../components/Adviser/advisorPic";
 // import Pic from "../../components/automation/pic";
@@ -13,9 +14,9 @@ const exchange = () => (
         {/* <img src="/images/advisorPic/automation.svg" alt="" /> */}
         {/* <Pic className={styles.automation}/> */}
       </div>
-      <div className={styles.video_title}>
+      {/* <div className={styles.video_title}>
         <h1>Crypto Exchange </h1>
-      </div>
+      </div> */}
     </div>
     {/* ############################################################################# Section One */}
     <div className={styles.section} style={{ background: "#010614" }}>
@@ -28,7 +29,9 @@ const exchange = () => (
         <h2 id={styles.titleh2}> 
       در زمان کنونی رمز ارز سریع ترین , امن ترین و کم هزینه ترین راه نقل و انتقال سرمایه است.شما می توانید میلیاردها دلار را در یک ایمیل جابجا کنید یا در کیف پول های خود داشته باشید بدون آن که نگران مسایل روتین نظام بانکی باشید. با توجه به صدها مزیت کریپتو , مجموع مدیریت آنلاین نیز تمام پلتفرم های خود را با امکان اتصال به درگاه های خرید و فروش با رمز ارز و تراکنش های بلاک چینی مجهز کرده تا جدیدترین تکنولوژی های جهان را در خدمت کاربران خود قرار دهد..,   
         </h2>
-        <button>اطلاعات بیشتر در فروشگاه</button>
+        <Link href="/products?slug=رمز-ارز">
+           <button> مشاهده نمونه ها و ثبت سفارش</button>
+        </Link>
       </div>
     </div>
     {/* ############################################################################# Section Two */}
@@ -49,7 +52,9 @@ const exchange = () => (
         <h2 style={{ color: "#000" }}>
         مجموعه مدیریت آنلاین آماده است که پلتفرم های یکپارچه , مقیاس پذیر , بین المللی ,با زبان تمام کشورهای جهان بروی تمام دستگاهای ویندوز , اندروید , ای او اس بصورت یکپارچه در دیتا سنترهای اختصاصی ارائه دهد.         
         </h2>
-        <button> اطلاعات بیشتر در فروشگاه</button>
+        <Link href="/products?slug=رمز-ارز">
+           <button> مشاهده نمونه ها و ثبت سفارش</button>
+        </Link>
       </div>
     </div>
     {/* ############################################################################# Section Four */}
@@ -65,7 +70,9 @@ const exchange = () => (
         <h2 style={{ color: "#fff" }}>
               برنامه نویسی و اجرا انواع کیف پول های بلاک چینی بصورت اختصاصی در مجموعه مدیریت آنلاین با متد روز امنیتی اجرا می شود , همچنین انواع نرم افزار های کمکی معاملات ارزی و درگاه های دریافت و پرداخت ارز دیجیتال برای تمام کسب و کارها قابل ارائه می باشد. 
         </h2>
-        <button>اطلاعات بیشتر در فروشگاه</button>
+        <Link href="/products?slug=رمز-ارز">
+           <button> مشاهده نمونه ها و ثبت سفارش</button>
+        </Link>
       </div>
     </div>
     

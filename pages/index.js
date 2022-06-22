@@ -9,14 +9,15 @@ import Service2 from '../components/Services2/Service2';
 import Footer from '../components/Footer/Footer';
 import SliderOne from "../components/cardslider/sliderone";
 import World from '../components/worldMap/world';
-import Banner from '../components/Banner/Banner';
-import Header from '../components/Header/Header'
+// import Banner from '../components/Banner/Banner';
+// import Header from '../components/Header/Header'
 import Head from 'next/head'
 import News from '../components/news/News';
 import axios from 'axios';
 import { MainLink } from '../components/BaseUrl/BaseUrl';
 import Promo from '../components/Promo/Promo';
-
+import ChartSection from '../components/chart/ChartSection'
+import ChartSection2 from '../components/chart/ChartSection2'
 
 
 
@@ -33,6 +34,7 @@ export default function Home({news}) {
       <Head>
         <title>Home - ONLINE CEO</title>
         <meta name="description" content="مدیریت آنلاین" />
+        <meta name="theme-color" content="#142028"/>
         <link rel="icon" href="/images/1.png" />
         <link rel='manifest' href='/manifest.json' />
       </Head>
@@ -53,8 +55,10 @@ export default function Home({news}) {
           />
       {/* </div> */}
       <InfoSection {...homeObjectOne} />
-      <Service2/>
+      <ChartSection2/>
       <InfoSection {...homeObjectTwo} />
+      <Service2/>
+        <InfoSection {...homeObjectFive} />
 
       <div style={{width: "100%", height: "100%" , backgroundColor: '#142028',overflow: 'hidden'}}>
         <SliderOne  style={{width: "100%"}} 
@@ -65,9 +69,9 @@ export default function Home({news}) {
 
 
       
-      <InfoSection {...homeObjectFive} />
       <InfoSection {...homeObjectThree} />
       {/* <Services />  */}
+      <ChartSection />
       <InfoSection {...homeObjectFour} />
       <InfoSection {...homeObjectsix} />
       <News news={news} />

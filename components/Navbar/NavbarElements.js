@@ -16,7 +16,7 @@ export const Nav = styled.nav`
     position: sticky;
     top: 0px;
     z-index: 10;
-    /* box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px; */
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
      background: linear-gradient(450deg, #000, #142028);
 
     @media screen and (max-width: 960px) {

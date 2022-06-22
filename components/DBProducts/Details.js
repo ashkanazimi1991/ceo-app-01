@@ -100,7 +100,7 @@ export default function Details({ detailsData }) {
       ></i>
     </p>,
     <p>
-      <i className="fas fa-user"></i> فروشنده :{" "}
+      <i className="fas fa-user"></i> تولیدکننده :{" "}
       {dataDetails.manufacturer_company}
     </p>,
     <p>
@@ -114,7 +114,7 @@ export default function Details({ detailsData }) {
       {dataDetails.repository_quantity}
     </p>,
     <p>
-      <i className="fas fa-dollar-sign"></i> قیمت محصول : {dataDetails.price}
+      <i className="fas fa-dollar-sign"></i>  قیمت محصول به ریال : {dataDetails.price}
     </p>,
     <button
       style={{
@@ -255,9 +255,10 @@ export default function Details({ detailsData }) {
               borderRadius: "8px",
               overflowY: "auto",
               padding: "20px",
-              textAlign: "right",
+              textAlign: "justify",
               direction: "rtl",
               margin: "10px auto",
+              
             }}
           >
             {dataDetails.body}

@@ -3,11 +3,11 @@
     border-radius: 5px;
     padding: 5px 8px 5px 8px;
     color: white;
-    background: linear-gradient(450deg, #045256, #142028);
+    /* background: linear-gradient(450deg, #000, #142028); */
     display: none;
 }
 .navbarDive nav{
-    background: linear-gradient(450deg, #045256, #142028);
+    background: linear-gradient(450deg, #000, #142028);
     position: static;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }

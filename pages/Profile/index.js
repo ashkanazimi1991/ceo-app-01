@@ -7125,7 +7125,7 @@ const index = ({ data, tokenCookie }) => {
         <section className={styles.main}>
           <section className={styles.User_Info_Details_Box}>
             <section className={styles.Header_User_Info_Box}>
-              <h4 style={{ fontSize: '16px' }}>اطلاعات حساب کاربری</h4>
+              <h4 style={{ fontSize: '16px' , color:"#fff" }}>اطلاعات حساب کاربری</h4>
             </section>
             <hr />
             <div style={{ position: 'relative' }} className={styles.Header_User_Info_Box_Avatar}>

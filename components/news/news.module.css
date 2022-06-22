@@ -27,7 +27,7 @@
     .row {
         grid-template-columns:  1fr ;
         /* padding-left: 0; */
-        padding-right: 50px;
+        padding-right: 0px;
         margin-top: -5PX;
         align-items: center;
 
@@ -52,7 +52,7 @@
 
 @media screen and (max-width: 480px) {
     .card {
-        width: 250px;
+        width: 290px;
     }
 }
 .img {

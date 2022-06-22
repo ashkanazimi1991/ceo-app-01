@@ -10,7 +10,7 @@ export const SidebarContainer = styled.aside`
     width: 100%;
     height: 100%;
     /* margin-right: 150px; */
-    /* background: #ddf7f8; */
+    background: linear-gradient(450deg, #000, #142028);
     display: grid;
     align-items: center;
     bottom: 0;
@@ -33,7 +33,7 @@ export const Icon = styled.div`
 
     left: 1.rem;
     font-size: 2rem;
-    color: #ddf7f8;
+    /* color: #ddf7f8; */
     /* border-radius: 50px; */
     cursor: pointer;
     outline: none;
@@ -80,13 +80,13 @@ export const SidebarLink = styled(LinkS)`
     border-color: lightblue;
     font-weight: 700;
     text-decoration: none;
-    background-color: #fff;
+    /* background-color: #fff; */
     margin: 10px;
     /* padding: 16px 84px; */
     list-style: none;
     transition: 0s .2s ease-in-out;
     text-decoration: none;
-    color: #000;
+    color: #fff;
     cursor: pointer;
 
 
@@ -105,7 +105,7 @@ export const SideBtnWrap = styled.div`
 
 export const SidebarRoute = styled.div`
     border-radius: 10px;
-    background: #045256;
+    /* background: #045256; */
     box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
     white-space: nowrap;
     padding: 16px 84px;
@@ -118,7 +118,14 @@ export const SidebarRoute = styled.div`
     cursor: pointer;
     transition:  all 0.2s ease-in-out;
     text-decoration: none;
-    text-shadow: 2px 2px #000;
+    text-shadow: 2px 2px 5px #000;
+    background: linear-gradient(105deg , green , #fff);
+    animation: changeColor 3s linear infinite alternate;
+    
+    @keyframes changeColor {
+        to{filter: hue-rotate(90deg); }
+    }
+
 
     &:hover {
         transition: all 0.2s ease-in-out;

@@ -10,15 +10,15 @@ import Link from 'next/link';
 
 export default function Example() {
     return (
-      <div className="relative bg-gradient-to-bl from-gray-700 via-gray-900 to-black  text-[#fff] overflow-hidden">
+      <div className="relative bg-gradient-to-b from-gray-700 via-gray-900 to-black  text-[#fff] overflow-hidden">
         <div className="pt-16 pb-80 sm:pt-24 sm:pb-40 lg:pt-40 lg:pb-48">
           <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 sm:static">
             <div className=" sm:max-w-lg">
-              <h1 className="text-4xl font font-extrabold tracking-tight text-[#fff] sm:text-3xl">
-              Welcome To community
+              <h1 className="text-2xl font font-extrabold tracking-tight text-[#fff] sm:text-3xl">
+              Welcome To Community
               </h1>
-              <p className="mt-4 text-xl text-gray-500">
-              We Supports your Programming needs such as, building platforms, Software, IoT, Robotic & Native apps as Windows, ios & Android apps.
+              <p className="mt-4 text-sm p-5 shadow-2xl ltr text-right rounded-2xl text-gray-500 bg-gradient-to-r from-gray-700 via-gray-900 to-black">
+              به مجموعه برنامه نویسی مدیریت آنلاین خوش آمدید. پشتیبانی از زبان های مختلف برنامه نویسی روی فریم ورک های معروف جهان , برای رفع تمام نیازهای برنامه نویسی شما
               </p>
               <div>
                 {/* <Link href='/project'>
@@ -27,8 +27,8 @@ export default function Example() {
                </button>
                 </Link> */}
                 <Link href='auth/login'>
-                  <button   className=" pl-5 pr-20 text-[#fff] bg-gradient-to-bl from-gray-700 via-gray-900 to-black border border-transparent rounded-md" >
-                    <InformationCircleIcon className="h-5 w-5 text-[#fdfdfd] md:h-8 md:w-8" /> Start Here !!!!
+                  <button   className=" pl-5 p-3 mt-6 pr-20 rounded-2xl text-xl text-green-500 bg-gradient-to-bl from-gray-700 via-gray-900 to-black border border-transparent " >
+                     Start !!!!
                   </button>
                 </Link>
 
@@ -101,13 +101,15 @@ export default function Example() {
                     </div>
                   </div>
                 </div>
-  
-                <a
-                  href="/project"
-                  className="inline-block text-center bg-gradient-to-bl from-gray-700 via-gray-900 to-black border border-transparent rounded-md py-3 px-8 font-medium text-white hover:bg-indigo-700"
-                >
-                  See Project
+                
+                <div>
+
+
+                <a  href="/project"
+                  className=" inline-block rounded-2xl text-center bg-gradient-to-bl from-gray-700 via-gray-900 to-black border border-transparent py-3 px-8 font-medium text-blue-400 " > 
+                                 See Project !!!
                 </a>
+                </div>
               </div>
             </div>
           </div>

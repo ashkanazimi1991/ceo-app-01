@@ -1,11 +1,11 @@
-@font-face {
+/* @font-face {
     font-family: "sansiran";
     src: url(../../public/fonts/iransans.ttf);
-}
+} */
 
 .container {
-    background-color: #F2F2F2;
-    font-family: sansiran;
+    background: linear-gradient(450deg, #000, #142028);
+    /* font-family: sansiran; */
     width: 100%;
     min-height: 100%;
     direction: rtl;
@@ -26,7 +26,7 @@
 
 .User_Info_Details_Box {
     direction: rtl;
-    background-color: #ffffff;
+    /* background-color: #ffffff; */
     margin: 20px;
     border-radius: 8px;
     border: 1px solid rgb(187, 187, 187);
@@ -56,12 +56,12 @@
 }
 
 .User_Info_Details_field_Grid {
-    border: 1px solid #E1E1E2;
+    border: 1px solid #2fbbe6;
     padding: 15px;
 }
 
 .User_Info_Details_field_Grid p:first-child {
-    color: #81858B;
+    color: #36cccc;
     font-size: 14px;
 }
 
@@ -70,13 +70,13 @@
     justify-content: space-between;
     align-items: center;
     font-size: 16px;
-    color: black;
+    color: rgb(28, 227, 161);
 
 }
 
 .User_Info_Details_field_Flex p {
     font-size: 16px !important;
-    color: black !important;
+    color: rgb(210, 196, 196) !important;
 
 }
 
@@ -85,7 +85,7 @@
     justify-content: space-between;
     align-items: center;
     direction: rtl;
-    font-family: sansiran;
+    /* font-family: sansiran; */
 }
 
 .Header_Modal_Close {
@@ -168,6 +168,7 @@
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     padding: 3px;
     margin-left: 10px;
+    
 }
 
 .Images_Box {
@@ -221,7 +222,7 @@
     padding: 5px 0px;
     border: none;
     opacity: 0.8;
-    font-family: iranyekan;
+    /* font-family: iranyekan; */
     cursor: pointer;
 
 }
@@ -237,16 +238,20 @@
 }
 
 .Images_Box_Submit input{
-    background: rgb(27, 154, 204);
+    /* background: rgb(27, 154, 204); */
     border: none;
     padding: 8px;
     border-radius: 8px;
-    color: white;
+    color: rgb(248, 248, 248);
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     width: 50%;
-
-
+    transition: all 0.2s ease-in-out;
+    background: linear-gradient(45deg , #25c2f1 , #1c813c);
+   
+    
+  
 }
+
 
 .SideBar {
     width: calc(100% / 6);

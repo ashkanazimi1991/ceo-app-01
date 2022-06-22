@@ -44,7 +44,7 @@ const Footer = () => {
                                            
                         <FooterLinkItems>
                             <FooterLinkTitle>محصولات</FooterLinkTitle>
-                            <Link href= '/login'>{<FooterLink >فروشگاه روباتیک</FooterLink>}</Link>
+                            <Link href= '/login'>{<FooterLink >فروشگاه رباتیک</FooterLink>}</Link>
                             <Link href= '/login'>{<FooterLink >فروشگاه اینترنت اشیا</FooterLink>}</Link>
                             <Link href= '/login'>{<FooterLink >دیتا سنتر و راک</FooterLink>}</Link>
                             <Link href= '/login'>{<FooterLink >آموزشی و مشاوره</FooterLink>}</Link>

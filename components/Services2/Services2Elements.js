@@ -10,7 +10,7 @@ export const ServicesContainer = styled.div`
   align-items: center;
   /* padding-right: 10px; */
   font-family: iransans;
-  /* background: linear-gradient(105deg, #22577E,  #064663); */
+  background: linear-gradient(0deg, #000,  #142028);
   background-color: #142028;
    padding-bottom: 40px;
   /* padding-top: 20px; */
